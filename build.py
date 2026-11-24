@@ -71,7 +71,9 @@ footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
 @media print{header,footer,.noprint,.signup,.skyband::before,.skyband::after{display:none!important}body{background:#fff}}
 .skyband{position:relative;background:linear-gradient(#CDEBEF,#A9DAE2);padding:10px 0 56px;margin-bottom:10px}
 .skyband::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:radial-gradient(circle at 30px 30px,#FDEDE3 29px,transparent 30px) 0 0/60px 28px repeat-x}
-.skyband::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='160'%3E%3Cg fill='none' stroke='white' stroke-width='3' stroke-linecap='round' opacity='.9'%3E%3Cpath d='M40 60q6-20 26-15q9-16 27-6q22-3 20 21h-73z'/%3E%3Cpath d='M300 110q5-16 21-12q8-14 23-4q18-3 16 16h-60z'/%3E%3C/g%3E%3C/svg%3E") 0 0 repeat-x;pointer-events:none}
+.skyband::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='160'%3E%3Cg fill='none' stroke='white' stroke-width='3' stroke-linecap='round' opacity='.9'%3E%3Cpath d='M40 60q6-20 26-15q9-16 27-6q22-3 20 21h-73z'/%3E%3Cpath d='M300 110q5-16 21-12q8-14 23-4q18-3 16 16h-60z'/%3E%3C/g%3E%3C/svg%3E") 0 0 repeat-x;pointer-events:none;animation:driftbg 40s linear infinite}
+@keyframes driftbg{from{background-position:0 0}to{background-position:420px 0}}
+@media(prefers-reduced-motion:reduce){.skyband::before{animation:none}}
 .skyband>.wrap{position:relative;z-index:1}
 .skyband h1{color:#7A4A1E}
 

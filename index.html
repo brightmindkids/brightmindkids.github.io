@@ -178,7 +178,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
         <circle cx="160" cy="366" r="5" fill="#1F2A4A"/><circle cx="190" cy="366" r="5" fill="#1F2A4A"/><circle cx="175" cy="380" r="4" fill="#1F2A4A"/>
       </g>
       <!-- paper plane with banner -->
-      <g class="floaty2">
+      <g class="floaty2"><animateTransform attributeName="transform" type="translate" values="0 0;-30 6;0 0" dur="9s" repeatCount="indefinite"/>
         <path d="M1180 210l90-34-30 64-18-18z" fill="#fff" stroke="#1F2A4A" stroke-width="4" stroke-linejoin="round"/>
         <path d="M1222 222l18 18-8 22z" fill="#E8604C" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/>
         <path d="M1180 210q-30 10-60 4" fill="none" stroke="#1F2A4A" stroke-width="2"/>
@@ -186,7 +186,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
         <g fill="#FFC94A"><circle cx="1000" cy="216" r="5"/><circle cx="1040" cy="216" r="5"/><circle cx="1080" cy="216" r="5"/></g>
       </g>
       <!-- ark on cloud waves -->
-      <g>
+      <g><animateTransform attributeName="transform" type="rotate" values="-2 1225 480;2 1225 480;-2 1225 480" dur="4s" repeatCount="indefinite"/>
         <path d="M1110 470h230l-30 50h-170z" fill="#E0943A" stroke="#1F2A4A" stroke-width="4" stroke-linejoin="round"/>
         <path d="M1150 470v-44h100v44" fill="#FFF8EC" stroke="#1F2A4A" stroke-width="4"/>
         <path d="M1140 426l60-34 60 34z" fill="#2F8F9D" stroke="#1F2A4A" stroke-width="4" stroke-linejoin="round"/>
@@ -195,6 +195,35 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
         <path d="M1294 410h10M1294 430h10M1294 450h10" stroke="#C98A2B" stroke-width="5"/>
         <circle cx="1302" cy="390" r="12" fill="#FFC94A" stroke="#1F2A4A" stroke-width="4"/>
         <path d="M1118 470q-14-22 8-28q12 0 12 14" fill="#B9C0CC" stroke="#1F2A4A" stroke-width="4"/>
+      </g>
+      <!-- drifting clouds -->
+      <g fill="#fff" opacity=".85">
+        <path d="M0 0q8-26 34-20q12-22 38-8q30-4 28 28h-100z"><animateTransform attributeName="transform" type="translate" from="-160 150" to="1600 150" dur="70s" repeatCount="indefinite"/></path>
+        <path d="M0 0q6-20 26-15q9-16 27-6q22-3 20 21h-73z"><animateTransform attributeName="transform" type="translate" from="-120 260" to="1600 260" dur="95s" begin="-40s" repeatCount="indefinite"/></path>
+        <path d="M0 0q8-26 34-20q12-22 38-8q30-4 28 28h-100z" opacity=".7"><animateTransform attributeName="transform" type="translate" from="-160 60" to="1600 60" dur="120s" begin="-80s" repeatCount="indefinite"/></path>
+      </g>
+      <!-- birds -->
+      <g fill="none" stroke="#1F2A4A" stroke-width="3" stroke-linecap="round">
+        <g><path d="M-12 0q6-8 12 0q6-8 12 0"><animate attributeName="d" values="M-12 0q6-8 12 0q6-8 12 0;M-12 -4q6 6 12 4q6 2 12-4;M-12 0q6-8 12 0q6-8 12 0" dur=".8s" repeatCount="indefinite"/></path><animateMotion path="M-60 230 C300 150 700 260 1500 120" dur="26s" repeatCount="indefinite"/></g>
+        <g><path d="M-9 0q4-6 9 0q4-6 9 0"><animate attributeName="d" values="M-9 0q4-6 9 0q4-6 9 0;M-9 -3q4 5 9 3q4 2 9-3;M-9 0q4-6 9 0q4-6 9 0" dur=".7s" repeatCount="indefinite"/></path><animateMotion path="M-60 260 C320 190 720 300 1500 160" dur="26s" begin="-1.2s" repeatCount="indefinite"/></g>
+      </g>
+      <!-- rising balloons -->
+      <g stroke="#1F2A4A" stroke-width="2.5">
+        <g><ellipse cx="0" cy="0" rx="14" ry="18" fill="#E8604C"/><path d="M0 18q-4 14 2 30" fill="none" stroke-width="1.5"/><animateMotion path="M1030 540 C1010 400 1060 260 1020 -60" dur="18s" repeatCount="indefinite"/></g>
+        <g><ellipse cx="0" cy="0" rx="12" ry="16" fill="#FFC94A"/><path d="M0 16q4 12-2 26" fill="none" stroke-width="1.5"/><animateMotion path="M1070 550 C1100 420 1040 260 1090 -60" dur="22s" begin="-8s" repeatCount="indefinite"/></g>
+        <g><ellipse cx="0" cy="0" rx="12" ry="16" fill="#6A5ACD"/><path d="M0 16q-3 12 2 26" fill="none" stroke-width="1.5"/><animateMotion path="M450 540 C420 380 480 240 440 -60" dur="24s" begin="-14s" repeatCount="indefinite"/></g>
+      </g>
+      <!-- butterflies -->
+      <g stroke="#1F2A4A" stroke-width="2">
+        <g><g><path d="M0 0q-12-14-15-2q2 10 15 2zM0 0q12-14 15-2q-2 10-15 2z" fill="#FF9F9F"><animateTransform attributeName="transform" type="scale" values="1 1;.3 1;1 1" dur=".35s" repeatCount="indefinite"/></path></g><animateMotion path="M300 520 q60-60 120-10 t120 -20 t140 30 t120 -40" dur="14s" repeatCount="indefinite" rotate="0"/></g>
+        <g><g><path d="M0 0q-10-12-13-2q2 8 13 2zM0 0q10-12 13-2q-2 8-13 2z" fill="#FFC94A"><animateTransform attributeName="transform" type="scale" values="1 1;.3 1;1 1" dur=".3s" repeatCount="indefinite"/></path></g><animateMotion path="M900 500 q-60-50-120 0 t-120 -10 t-140 20" dur="12s" begin="-4s" repeatCount="indefinite"/></g>
+      </g>
+      <!-- twinkling sparkles -->
+      <g fill="#fff">
+        <path d="M640 140l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></path>
+        <path d="M880 330l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"><animate attributeName="opacity" values="0;1;0" dur="2.4s" begin="-1s" repeatCount="indefinite"/></path>
+        <path d="M330 300l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"><animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="-2s" repeatCount="indefinite"/></path>
+        <path d="M1380 80l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"><animate attributeName="opacity" values="0;1;0" dur="3.4s" begin="-.5s" repeatCount="indefinite"/></path>
       </g>
       <!-- snowy ground -->
       <path d="M0 560q180-60 380-20t360-10 380 0 320-10V640H0z" fill="#fff"/>
@@ -260,6 +289,7 @@ const fmt=d=>{const t=new Date(d+'T12:00:00');return isNaN(t)?esc(d):t.toLocaleD
 let posts=[],books=[],cat='All';
 const amz=a=>'https://www.amazon.com/dp/'+encodeURIComponent(a||'');
 function renderBooks(){const el=document.getElementById('booksList');el.innerHTML=books.map(b=>`<div class="book">${b.cover?`<img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy">`:`<div class="nocover">${esc(b.title)}</div>`}<div><h3>${esc(b.title)}</h3>${b.subtitle?`<p style="margin:2px 0 0;font-weight:700">${esc(b.subtitle)}</p>`:''}<p>${esc(b.blurb)}${b.ages?` Ages ${esc(b.ages)}.`:''}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${b.page&&/^books\/[\w-]+\.html$/.test(b.page)?`<a class="btn" href="${esc(b.page)}">See the book</a>`:''}<a class="btn" style="background:#F3EAD6" href="${esc(amz(b.asin))}">Amazon</a></div></div></div>`).join('');document.getElementById('bookCount').textContent=books.length>2?books.length+' books so far.':''}
+try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelector('.sky .scene')?.pauseAnimations()}catch(e){}
 const stars=document.getElementById('stars')||document.createElementNS('http://www.w3.org/2000/svg','g');
 for(let i=0;i<34;i++){const x=(i*137)%640,y=(i*71)%250;const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x);c.setAttribute('cy',y+8);c.setAttribute('r',i%5?1.6:2.6);c.setAttribute('opacity',i%3?.55:.9);if(i%4==0){c.setAttribute('class','twinkle');c.style.animationDelay=(i%7)*.4+'s'}stars.appendChild(c)}
 
