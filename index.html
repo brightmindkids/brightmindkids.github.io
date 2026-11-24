@@ -22,7 +22,7 @@
    COLOUR and TYPE: brand navy night, sunny yellow, cream pages, teal; Fredoka titles, Nunito text
    LAYOUT: navy hero band, featured story, grid of cards, "our books" shelf, article view on #slug */
 :root{color-scheme:light dark;
---bg:light-dark(#FFF8EC,#141B30);--card:light-dark(#FFFFFF,#1E2742);--ink:light-dark(#1F2A4A,#F3EEE3);
+--bg:light-dark(#FDEDE3,#141B30);--card:light-dark(#FFFFFF,#1E2742);--ink:light-dark(#1F2A4A,#F3EEE3);
 --soft:light-dark(#5A6482,#AEB6CC);--line:light-dark(#EADFC9,#2E3858);--navy:#1F2A4A;--sun:#FFC94A;--teal:light-dark(#236A78,#5FC2D0);--chip:light-dark(#F5EBD7,#26304F)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
@@ -45,6 +45,21 @@ nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.12);outline:none}
 .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,201,74,.16);color:var(--sun);font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--sun);animation:pulse 2s infinite}
 @keyframes pulse{50%{opacity:.35}}
+
+.hero.sky{position:relative;background:#9FD3DC;color:var(--navy);padding:0;overflow:hidden;min-height:clamp(520px,46vw,660px);display:flex;align-items:center;justify-content:center}
+.sky .scene{position:absolute;inset:0;width:100%;height:100%}
+.cloudwrap{position:relative;z-index:1;padding:40px max(5vw,16px) 90px;width:100%;display:flex;justify-content:center}
+.bigcloud{position:relative;max-width:700px;text-align:center;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400' preserveAspectRatio='none'%3E%3Cpath d='M80 330c-50 0-70-50-40-80-30-40 0-90 50-80 0-60 70-90 115-55 20-50 100-60 135-15 40-35 115-15 120 45 55-5 85 50 60 90 35 25 20 95-40 95z' fill='white'/%3E%3C/svg%3E") center/100% 100% no-repeat;padding:clamp(95px,10vw,135px) clamp(60px,9vw,130px) clamp(60px,7vw,90px);filter:drop-shadow(0 24px 30px rgba(31,42,74,.18))}
+.sky .bigcloud h1{font-size:clamp(40px,6vw,72px);color:#7A4A1E;line-height:1}
+.sky .bigcloud h1 span{color:#E8604C}
+.sky .bigcloud p{color:var(--navy);font-size:17px;margin:14px auto 20px;max-width:30em}
+.sky .pill{background:#FFF3D6;color:#8A5A00}
+.sky .dot{background:#E8604C}
+.scallop{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:34px;z-index:2}
+.floaty{animation:floaty 6s ease-in-out infinite}.floaty2{animation:floaty 7s ease-in-out infinite reverse}
+@keyframes floaty{50%{transform:translateY(-10px)}}
+@media(max-width:700px){.hero.sky{min-height:560px}.bigcloud{background:#fff;border-radius:36px;padding:32px 22px}}
+@media(prefers-reduced-motion:reduce){.floaty,.floaty2{animation:none}}
 .art{aspect-ratio:16/11;width:100%;border-radius:28px;overflow:hidden;background:#24325A}
 .art svg{width:100%;height:100%;display:block}
 .tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-block:28px 8px}
@@ -124,52 +139,87 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
       <a href="games.html">Kids' games</a>
       <a href="manners.html">Manners cards</a>
       <a href="bedtime.html">Bedtime chart</a>
-      <a href="#books">Our books</a>
     </nav>
   </div>
 </header>
 
 <main id="home">
-  <section class="hero">
-    <div class="wrap heroGrid">
-      <div>
+  <section class="hero sky">
+    <svg class="scene" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CDEBEF"/><stop offset="1" stop-color="#9FD3DC"/></linearGradient>
+        <radialGradient id="moong" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#FFE79A"/><stop offset="1" stop-color="#F7C23A"/></radialGradient>
+        <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#ffffff" opacity=".35"/><circle cx="4" cy="4" r=".5" fill="#1F2A4A" opacity=".06"/></pattern>
+      </defs>
+      <rect width="1440" height="640" fill="url(#skyg)"/>
+      <rect width="1440" height="640" fill="url(#grain)"/>
+      <!-- small outline clouds -->
+      <g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".9">
+        <path d="M1130 120q6-22 28-16q10-18 30-6q24-4 22 22h-80z"/>
+        <path d="M560 70q5-16 21-12q8-14 23-4q18-3 16 16h-60z"/>
+        <path d="M1290 300q6-20 26-15q9-16 27-6q22-3 20 21h-73z"/>
+      </g>
+      <!-- moon balloon -->
+      <g class="floaty">
+        <circle cx="170" cy="120" r="150" fill="url(#moong)"/>
+        <circle cx="170" cy="120" r="150" fill="url(#grain)"/>
+        <path d="M110 130q20 16 40 0M210 130q20 16 40 0" fill="none" stroke="#8A5A00" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="100" cy="170" r="20" fill="#FF9F9F" opacity=".45"/><circle cx="262" cy="170" r="20" fill="#FF9F9F" opacity=".45"/>
+        <path d="M160 190q20 14 40 0" fill="none" stroke="#8A5A00" stroke-width="5" stroke-linecap="round"/>
+        <path d="M70 250L120 370M270 250L230 370" stroke="#8A5A00" stroke-width="3"/>
+        <path d="M90 290l14 6-8 12zM110 330l14 6-8 12z" fill="#E8604C"/><path d="M252 290l-14 6 8 12zM236 330l-14 6 8 12z" fill="#2F8F9D"/>
+        <!-- teacup basket -->
+        <path d="M100 370h150q-6 70-75 70t-75-70z" fill="#FFF8EC" stroke="#1F2A4A" stroke-width="4"/>
+        <g stroke="#E8604C" stroke-width="6"><path d="M125 378v40M150 378v52M175 378v56M200 378v52M225 378v40"/></g>
+        <path d="M250 384q30 4 22 28q-6 14-26 12" fill="none" stroke="#1F2A4A" stroke-width="4"/>
+        <!-- Finn peeking -->
+        <path d="M140 372l-22-62 46 44zM210 372l22-62-46 44z" fill="#E0943A" stroke="#1F2A4A" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M132 330l10 26M218 330l-10 26" stroke="#FFF3D6" stroke-width="6" stroke-linecap="round"/>
+        <ellipse cx="175" cy="372" rx="44" ry="30" fill="#F2B56B" stroke="#1F2A4A" stroke-width="4"/>
+        <circle cx="160" cy="366" r="5" fill="#1F2A4A"/><circle cx="190" cy="366" r="5" fill="#1F2A4A"/><circle cx="175" cy="380" r="4" fill="#1F2A4A"/>
+      </g>
+      <!-- paper plane with banner -->
+      <g class="floaty2">
+        <path d="M1180 210l90-34-30 64-18-18z" fill="#fff" stroke="#1F2A4A" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M1222 222l18 18-8 22z" fill="#E8604C" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M1180 210q-30 10-60 4" fill="none" stroke="#1F2A4A" stroke-width="2"/>
+        <path d="M960 196h160v40H960l14-20z" fill="#FFF8EC" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/>
+        <g fill="#FFC94A"><circle cx="1000" cy="216" r="5"/><circle cx="1040" cy="216" r="5"/><circle cx="1080" cy="216" r="5"/></g>
+      </g>
+      <!-- ark on cloud waves -->
+      <g>
+        <path d="M1110 470h230l-30 50h-170z" fill="#E0943A" stroke="#1F2A4A" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M1150 470v-44h100v44" fill="#FFF8EC" stroke="#1F2A4A" stroke-width="4"/>
+        <path d="M1140 426l60-34 60 34z" fill="#2F8F9D" stroke="#1F2A4A" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="1168" y="440" width="20" height="18" rx="4" fill="#9FD3DC" stroke="#1F2A4A" stroke-width="3"/><rect x="1212" y="440" width="20" height="18" rx="4" fill="#9FD3DC" stroke="#1F2A4A" stroke-width="3"/>
+        <path d="M1290 470v-70l14-6v76" fill="#FFC94A" stroke="#1F2A4A" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M1294 410h10M1294 430h10M1294 450h10" stroke="#C98A2B" stroke-width="5"/>
+        <circle cx="1302" cy="390" r="12" fill="#FFC94A" stroke="#1F2A4A" stroke-width="4"/>
+        <path d="M1118 470q-14-22 8-28q12 0 12 14" fill="#B9C0CC" stroke="#1F2A4A" stroke-width="4"/>
+      </g>
+      <!-- snowy ground -->
+      <path d="M0 560q180-60 380-20t360-10 380 0 320-10V640H0z" fill="#fff"/>
+      <path d="M0 590q240-40 480 0t480 0 480-10V640H0z" fill="#F4FAFB"/>
+      <g fill="#2F8F9D" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round">
+        <path d="M430 548l18-50 18 50z"/><path d="M470 556l14-40 14 40z"/><path d="M980 548l16-46 16 46z"/>
+      </g>
+      <g stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round">
+        <path d="M1010 556v-34l18-16 18 16v34z" fill="#FFF8EC"/><path d="M1006 524l22-22 22 22" fill="none"/>
+        <path d="M1052 560v-26l14-12 14 12v26z" fill="#FFE2D3"/>
+      </g>
+      <g stroke="#1F2A4A" stroke-width="3">
+        <rect x="560" y="548" width="90" height="16" rx="3" fill="#E8604C"/><rect x="568" y="532" width="78" height="16" rx="3" fill="#2F8F9D"/><rect x="562" y="516" width="84" height="16" rx="3" fill="#FFC94A"/>
+      </g>
+    </svg>
+    <div class="cloudwrap">
+      <div class="bigcloud">
         <span class="pill"><span class="dot"></span>A new post every day</span>
-        <h1 style="margin-top:16px">The <span>Story Corner</span></h1>
-        <p>Children's book news, picture-book picks and gentle reading ideas for families with little ones aged 3 to 8.</p>
+        <h1>The <span>Story Corner</span></h1>
+        <p>Children's book news, picture-book picks, free printables and gentle reading ideas for families with little ones aged 3 to 8.</p>
         <a class="btn" href="#latest">Read the latest</a>
       </div>
-      <div class="art" aria-hidden="true">
-        <svg viewBox="0 0 640 440">
-          <defs>
-            <radialGradient id="mg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFE7A3"/><stop offset="1" stop-color="#FFC94A"/></radialGradient>
-            <linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#FFF8EC"/><stop offset="1" stop-color="#F1E3C6"/></linearGradient>
-            <linearGradient id="pg2" x1="1" x2="0"><stop offset="0" stop-color="#FFF8EC"/><stop offset="1" stop-color="#F1E3C6"/></linearGradient>
-          </defs>
-          <circle cx="520" cy="80" r="62" fill="#FFC94A" opacity=".12"/>
-          <circle cx="520" cy="80" r="42" fill="url(#mg)"/>
-          <circle cx="540" cy="70" r="40" fill="#1F2A4A"/>
-          <g id="stars" fill="#FFF8EC"></g>
-          <path d="M0 360 Q160 300 320 340 T640 320 V440 H0Z" fill="#2B3A63"/>
-          <path d="M0 395 Q200 350 380 385 T640 370 V440 H0Z" fill="#33467A"/>
-          <ellipse cx="320" cy="392" rx="220" ry="16" fill="#141B30" opacity=".5"/>
-          <path d="M110 380 L320 395 L320 238 L110 222Z" fill="#236A78"/>
-          <path d="M530 380 L320 395 L320 238 L530 222Z" fill="#1B5763"/>
-          <path d="M120 370 Q220 352 320 380 V232 Q220 205 120 222Z" fill="url(#pg)"/>
-          <path d="M520 370 Q420 352 320 380 V232 Q420 205 520 222Z" fill="url(#pg2)"/>
-          <g stroke="#D9C9A5" stroke-width="5" stroke-linecap="round">
-            <path d="M150 255 Q220 245 290 262"/><path d="M150 280 Q220 270 290 287"/><path d="M150 305 Q210 297 260 309"/>
-            <path d="M350 262 Q420 245 490 255"/><path d="M350 287 Q420 270 490 280"/>
-          </g>
-          <path d="M370 330 q20 -30 40 0 q20 -30 40 0" fill="none" stroke="#E8604C" stroke-width="6" stroke-linecap="round"/>
-          <g fill="#FFC94A">
-            <path class="twinkle" d="M300 170l7 15 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z"/>
-            <path class="twinkle" style="animation-delay:.8s" d="M380 120l5 11 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2z"/>
-            <path class="twinkle" style="animation-delay:1.6s" d="M240 110l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/>
-          </g>
-          <circle cx="335" cy="205" r="5" fill="#FFF8EC"/><circle cx="270" cy="160" r="4" fill="#FFF8EC"/><circle cx="350" cy="150" r="3" fill="#FFF8EC"/>
-        </svg>
-      </div>
     </div>
+    <svg class="scallop" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V20 q30-20 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0V40z" fill="var(--bg)"/></svg>
   </section>
 
   <div class="wrap" id="latest">
@@ -211,7 +261,7 @@ const fmt=d=>{const t=new Date(d+'T12:00:00');return isNaN(t)?esc(d):t.toLocaleD
 let posts=[],books=[],cat='All';
 const amz=a=>'https://www.amazon.com/dp/'+encodeURIComponent(a||'');
 function renderBooks(){const el=document.getElementById('booksList');el.innerHTML=books.map(b=>`<div class="book">${b.cover?`<img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy">`:`<div class="nocover">${esc(b.title)}</div>`}<div><h3>${esc(b.title)}</h3>${b.subtitle?`<p style="margin:2px 0 0;font-weight:700">${esc(b.subtitle)}</p>`:''}<p>${esc(b.blurb)}${b.ages?` Ages ${esc(b.ages)}.`:''}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${b.page&&/^books\/[\w-]+\.html$/.test(b.page)?`<a class="btn" href="${esc(b.page)}">See the book</a>`:''}<a class="btn" style="background:#fff" href="${esc(amz(b.asin))}">Amazon</a></div></div></div>`).join('');document.getElementById('bookCount').textContent=books.length>2?books.length+' books so far.':''}
-const stars=document.getElementById('stars');
+const stars=document.getElementById('stars')||document.createElementNS('http://www.w3.org/2000/svg','g');
 for(let i=0;i<34;i++){const x=(i*137)%640,y=(i*71)%250;const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x);c.setAttribute('cy',y+8);c.setAttribute('r',i%5?1.6:2.6);c.setAttribute('opacity',i%3?.55:.9);if(i%4==0){c.setAttribute('class','twinkle');c.style.animationDelay=(i%7)*.4+'s'}stars.appendChild(c)}
 
 function thumb(p,i){

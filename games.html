@@ -75,6 +75,14 @@ footer{background:var(--navy);color:#C9D0E2;padding:24px 0;font-size:15px}
 [hidden]{display:none!important}
 @media(max-width:700px){.colwrap{grid-template-columns:minmax(0,1fr)}.pal{grid-template-columns:repeat(8,1fr)}.mgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.inner,.gcard{transition:none}.win.show{animation:none}}
+
+/* whimsical sky theme */
+body{background:#FDEDE3}
+.hero{background:linear-gradient(#CDEBEF,#9FD3DC)!important;color:#1F2A4A!important;position:relative;padding-bottom:70px!important}
+.hero h1{color:#7A4A1E!important}.hero h1 span{color:#E8604C!important}.hero p{color:#1F2A4A!important}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:radial-gradient(circle at 30px 30px,#FDEDE3 29px,transparent 30px) 0 0/60px 28px repeat-x}
+.hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='160'%3E%3Cg fill='none' stroke='white' stroke-width='3' stroke-linecap='round' opacity='.9'%3E%3Cpath d='M40 60q6-20 26-15q9-16 27-6q22-3 20 21h-73z'/%3E%3Cpath d='M300 110q5-16 21-12q8-14 23-4q18-3 16 16h-60z'/%3E%3C/g%3E%3C/svg%3E") repeat;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
 </style>
 </head>
 <body>
