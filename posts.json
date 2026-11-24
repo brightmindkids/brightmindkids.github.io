@@ -1,5 +1,108 @@
 [
  {
+  "slug": "afraid-of-the-dark-gentle-bedtime-help",
+  "title": "Afraid of the dark? Gentle ways to help little ones with bedtime fears",
+  "date": "2026-11-24",
+  "category": "Parents",
+  "read": 4,
+  "color": "#2E6FB0",
+  "image": "images/afraid-of-the-dark-gentle-bedtime-help.jpg",
+  "excerpt": "Most children go through a phase of night-time fears. Here is why it happens, and calm, simple ways to help your child feel safe at bedtime.",
+  "body": [
+   {
+    "p": "If your little one suddenly needs the hall light on, checks under the bed or calls you back three times after lights out, you are far from alone. Paediatric sleep teams describe night-time fears as a normal part of growing up: most children have them at some point, and fear of the dark is one of the most common."
+   },
+   {
+    "p": "Children's Hospital Colorado notes that nearly three in four children aged 4 to 12 report night-time fears. They tend to appear as children's imaginations grow and they begin to understand that things can go wrong, while young children still find it hard to separate what is real from what is imagined."
+   },
+   {
+    "h": "What helps"
+   },
+   {
+    "ul": [
+     "Talk about the fear in daylight, when everyone is calm, rather than at the tense moment of lights out.",
+     "Take the fear seriously. Don't tease, even gently, and don't try to argue it away.",
+     "Keep the bedtime routine predictable: bath, pyjamas, story, cuddle, lights out, in the same order every night.",
+     "Offer small tools for control: a soft night light, a favourite cuddly toy, or a torch they can switch on themselves.",
+     "Practise brave thoughts together, such as 'The dark is just my room with the lights off.'",
+     "Read stories about characters who feel scared and discover they are safe after all.",
+     "Show quiet confidence that your child can handle it. Children borrow our calm."
+    ]
+   },
+   {
+    "p": "Most children grow out of these fears over a few weeks or months. If fears are severe, last a long time or affect daytime life, it is worth talking to your child's doctor."
+   },
+   {
+    "tip": "Before bed tonight, walk around the darkened room together with a torch and name everything you find: the chair, the books, the teddy. Familiar shapes turn the dark back into home."
+   }
+  ],
+  "sources": [
+   {
+    "title": "Seattle Children's: Nighttime fears",
+    "url": "https://www.seattlechildrens.org/pe/sleep-medicine/nighttime-fears/"
+   },
+   {
+    "title": "Children's Hospital Colorado: Helping kids overcome a fear of the dark",
+    "url": "https://www.childrenscolorado.org/just-ask-childrens/articles/fear-of-the-dark/"
+   },
+   {
+    "title": "Cleveland Clinic: Tips to overcome nighttime fears",
+    "url": "https://health.clevelandclinic.org/tips-to-overcome-nighttime-fears/"
+   }
+  ]
+ },
+ {
+  "slug": "mazes-coloring-activity-books-more-than-busywork",
+  "title": "Mazes, colouring and crayons: why activity books are more than busywork",
+  "date": "2026-11-24",
+  "category": "Parents",
+  "read": 4,
+  "color": "#E0943A",
+  "image": "images/mazes-coloring-activity-books-more-than-busywork.jpg",
+  "excerpt": "A quiet afternoon with crayons and a maze builds more than you might think: the hand control, focus and planning children later need for writing and reading.",
+  "body": [
+   {
+    "p": "Activity books can look like a simple way to keep little hands busy. But child development experts see colouring, tracing and mazes as real practice for skills that matter at school."
+   },
+   {
+    "p": "The first is fine motor control, the small movements of the wrist and fingers. Scholastic's parenting team points out that the preschool years are an especially important time for these skills, which children also use to button a coat or hold a spoon. When a child starts colouring inside the lines, it is a sign that both motor and thinking skills are developing."
+   },
+   {
+    "p": "Mazes add something extra. To solve one, a child has to stop, look ahead, choose a path and correct course, which exercises attention and planning. Occupational therapists often cite research in the journal Child Development (Cameron and colleagues, 2012) showing that fine motor skills and executive function each contribute to how children do in kindergarten."
+   },
+   {
+    "h": "Getting the most from activity pages"
+   },
+   {
+    "ul": [
+     "Choose pages with big, simple shapes and thick lines for younger children; add detail as they grow.",
+     "Offer chunky crayons first, then pencils as grip improves.",
+     "Let them choose the colours. Purple grass is perfectly fine.",
+     "Sit alongside and do a page yourself. It becomes time together, not a chore.",
+     "Stop while it is still fun. Five calm minutes beat twenty frustrated ones.",
+     "Link pages to a story you just read, so the activity becomes a way to retell it."
+    ]
+   },
+   {
+    "tip": "After tonight's story, ask your child to draw their favourite moment from it, then tell you about the picture. Drawing, talking and remembering, all in one."
+   }
+  ],
+  "sources": [
+   {
+    "title": "Scholastic: That magical moment your preschooler starts colouring inside the lines",
+    "url": "https://www.scholastic.com/parents/books-and-reading/raise-a-reader-blog/developmental-milestones-coloring-in-the-lines.print.html"
+   },
+   {
+    "title": "Your Therapy Source: What skills do mazes improve?",
+    "url": "https://www.yourtherapysource.com/?p=382201"
+   },
+   {
+    "title": "Highlights: 10 fine motor activities for preschoolers",
+    "url": "https://earlylearning.highlights.com/blogs/the-confident-classroom/10-fine-motor-activities-for-preschoolers"
+   }
+  ]
+ },
+ {
   "slug": "two-skills-that-predict-reading-success-sounds-and-words",
   "title": "Sounds and words: the two early skills that best predict reading success",
   "date": "2026-11-24",
@@ -58,7 +161,8 @@
     "title": "620 CKRM: Regina Public Library works to tackle declining literacy among children",
     "url": "https://www.620ckrm.com/2026/11/22/regina-public-library-works-to-tackle-declining-literacy-among-children/"
    }
-  ]
+  ],
+  "image": "images/two-skills-that-predict-reading-success-sounds-and-words.jpg"
  },
  {
   "slug": "reading-to-dogs-calm-confident-readers",
