@@ -1,5 +1,66 @@
 [
  {
+  "slug": "two-skills-that-predict-reading-success-sounds-and-words",
+  "title": "Sounds and words: the two early skills that best predict reading success",
+  "date": "2026-11-24",
+  "category": "Reading news",
+  "read": 3,
+  "color": "#2E6FB0",
+  "excerpt": "A large research review highlighted this month finds that hearing the sounds inside words and knowing lots of words matter most for reading. The good news: both grow through everyday play and talk.",
+  "body": [
+   {
+    "p": "If your child is slow to start reading, it is easy to worry that something is wrong. New research shared this month by Texas A&M University offers a calmer and more useful way to look at it."
+   },
+   {
+    "p": "A team led by educational psychologist Daniel Hajovsky combined about 50,000 correlations from 137 different cognitive and achievement tests into a single statistical model. The goal was to see which thinking skills are most closely linked to reading. Two stood out above everything else: auditory processing, meaning the ability to notice and tell apart the sounds in words, and comprehension-knowledge, meaning vocabulary and general background knowledge."
+   },
+   {
+    "h": "What mattered less than expected"
+   },
+   {
+    "p": "Visual processing showed no meaningful link with reading ability in the model. General intelligence did play a part, but a smaller one than some earlier reviews suggested. Memory, reasoning and processing speed acted more as supporting players. As Hajovsky put it, \"Struggles in reading are not a sign of low ability.\""
+   },
+   {
+    "p": "This is a research review, not a classroom trial, so it describes links rather than proving cause and effect. Still, it fits with what reading teachers have long seen: children who can play with sounds and who know many words tend to find reading easier."
+   },
+   {
+    "h": "Why it matters now"
+   },
+   {
+    "p": "Concern about early literacy is in the news. A Canadian report covered by Regina's 620 CKRM this week said roughly one in three Canadian children cannot read proficiently by Grade 4. Libraries there are answering with storytimes, rhyme programmes and book bags for new parents, all aimed at building exactly these early skills."
+   },
+   {
+    "h": "Easy ways to build both skills at home"
+   },
+   {
+    "ul": [
+     "Rhyme together. Nursery rhymes, silly songs and rhyming picture books train the ear to hear sound patterns.",
+     "Play I Spy with sounds: I spy something that starts with mmm. Mug! Moon! Mum!",
+     "Clap the beats in names and words: but-ter-fly has three claps.",
+     "Talk about the pictures during story time. Ask what is happening and introduce one new word, like enormous or soggy.",
+     "Read nonfiction too. Books about trucks, oceans or the human body build the background knowledge that helps later understanding.",
+     "Narrate everyday life. Cooking, shopping and walks are full of new words and ideas to chat about."
+    ]
+   },
+   {
+    "p": "For children aged 3 to 5, keep it playful and short. For 6 to 8 year olds who are reading on their own, keep up the conversation: ask them to explain a word or tell you what they learned. If a child still struggles despite practice, talk with their teacher. Targeted help for a specific skill usually works better than more of the same."
+   },
+   {
+    "tip": "Tonight at bedtime, pick a rhyming book and pause before the last word of each rhyme. Let your child guess it from the sound."
+   }
+  ],
+  "sources": [
+   {
+    "title": "ScienceDaily: Scientists identify two overlooked skills that predict reading success",
+    "url": "https://www.sciencedaily.com/releases/2026/11/261102202845.htm"
+   },
+   {
+    "title": "620 CKRM: Regina Public Library works to tackle declining literacy among children",
+    "url": "https://www.620ckrm.com/2026/11/22/regina-public-library-works-to-tackle-declining-literacy-among-children/"
+   }
+  ]
+ },
+ {
   "slug": "reading-to-dogs-calm-confident-readers",
   "title": "Why reading to a dog helps shy readers (and how to try it at home)",
   "date": "2026-11-24",
