@@ -76,6 +76,7 @@ nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.12);outline:none}
 .books{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px;margin-top:24px}
 .book{display:grid;grid-template-columns:140px minmax(0,1fr);gap:18px;background:rgba(255,255,255,.1);border-radius:20px;padding:16px;align-items:center}
 .book img{width:140px;height:140px;object-fit:cover;border-radius:12px;box-shadow:0 8px 18px rgba(0,0,0,.25);background:#FFF8EC}
+.nocover{width:140px;height:140px;border-radius:12px;background:#FFC94A;color:#1F2A4A;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font:600 16px Fredoka,sans-serif}
 .book h3{font-size:21px;color:#fff}
 .book p{margin:6px 0 12px;color:#DCEFF2;font-size:15px}
 .btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border-radius:999px;background:var(--sun);color:#1F2A4A;font-weight:800;text-decoration:none;font-size:15px}
@@ -196,7 +197,7 @@ const safeUrl=u=>/^https?:\/\//.test(u||'')?u:'#';
 const fmt=d=>{const t=new Date(d+'T12:00:00');return isNaN(t)?esc(d):t.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})};
 let posts=[],books=[],cat='All';
 const amz=a=>'https://www.amazon.com/dp/'+encodeURIComponent(a||'');
-function renderBooks(){const el=document.getElementById('booksList');el.innerHTML=books.map(b=>`<div class="book"><img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy"><div><h3>${esc(b.title)}</h3>${b.subtitle?`<p style="margin:2px 0 0;font-weight:700">${esc(b.subtitle)}</p>`:''}<p>${esc(b.blurb)}${b.ages?` Ages ${esc(b.ages)}.`:''}</p><a class="btn" href="${esc(amz(b.asin))}">See it on Amazon</a></div></div>`).join('');document.getElementById('bookCount').textContent=books.length>2?books.length+' books so far.':''}
+function renderBooks(){const el=document.getElementById('booksList');el.innerHTML=books.map(b=>`<div class="book">${b.cover?`<img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy">`:`<div class="nocover">${esc(b.title)}</div>`}<div><h3>${esc(b.title)}</h3>${b.subtitle?`<p style="margin:2px 0 0;font-weight:700">${esc(b.subtitle)}</p>`:''}<p>${esc(b.blurb)}${b.ages?` Ages ${esc(b.ages)}.`:''}</p><a class="btn" href="${esc(amz(b.asin))}">See it on Amazon</a></div></div>`).join('');document.getElementById('bookCount').textContent=books.length>2?books.length+' books so far.':''}
 const stars=document.getElementById('stars');
 for(let i=0;i<34;i++){const x=(i*137)%640,y=(i*71)%250;const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x);c.setAttribute('cy',y+8);c.setAttribute('r',i%5?1.6:2.6);c.setAttribute('opacity',i%3?.55:.9);if(i%4==0){c.setAttribute('class','twinkle');c.style.animationDelay=(i%7)*.4+'s'}stars.appendChild(c)}
 
