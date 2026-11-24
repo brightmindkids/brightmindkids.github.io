@@ -1,0 +1,34 @@
+{
+ "B0HSJPX51V": {
+  "slug": "little-fennec",
+  "about": "Finn is a little fennec fox with very, very big ears. When Mama turns off the light, every shadow and every scratch-scratch sound seems scary. Together, Finn and Mama explore the dark room and discover that the big shape is only a coat, the scratching is a branch, and the hoo-hoo is a friendly owl saying goodnight. A gentle, reassuring bedtime story that ends with a simple breathing trick and a sky full of stars.",
+  "learn": ["Night-time sounds and shadows have simple explanations", "A calming 'smell the flower, blow the candle' breathing trick", "Being brave is easier with someone by your side", "A cosy, predictable bedtime routine"],
+  "extras": "Ends with a page of tips for parents.",
+  "previews": ["previews/fennec-1.jpg", "previews/fennec-2.jpg", "previews/fennec-3.jpg"],
+  "activity": {"slug": "colour-finn", "title": "Colour Finn under the stars", "desc": "A free printable colouring page of Finn the fennec fox with the moon and stars."}
+ },
+ "B0HSJS45XZ": {
+  "slug": "the-world-upon-the-waves",
+  "about": "Long ago, Allah chose a kind and patient man, Prophet Nuh (AS), to guide his people. When Allah told him to build a great ark, Nuh worked with faith and patience. Animals came two by two, the rain fell, and the ark floated safely on the waves until a dove returned with an olive branch. A warm retelling for young children about patience, trust in Allah and gratitude, followed by activity pages to enjoy together.",
+  "learn": ["Patience and trust in Allah, even when things are hard", "Kindness to people and animals", "Gratitude: saying Alhamdulillah", "Fun activities: maze, matching and counting animals, colouring"],
+  "extras": "Includes activity pages and a certificate of achievement.",
+  "previews": ["previews/waves-1.jpg", "previews/waves-2.jpg", "previews/waves-3.jpg"],
+  "activity": {"slug": "count-the-animals", "title": "Count the animals on the Ark", "desc": "A free printable counting page with animals two by two."}
+ },
+ "B0HP7BSLPP": {
+  "slug": "yunus-and-the-giant-whale",
+  "about": "A gentle ocean adventure retelling the story of Prophet Yunus (AS): his journey, the giant whale, and his heartfelt dua in the dark. Children learn that Allah always hears us, and that saying sorry and asking forgiveness brings light back into our hearts. The story is followed by ocean-themed mazes, matching and counting games, and a certificate to celebrate your little reader.",
+  "learn": ["Prayer and dua: Allah always hears us", "Patience in difficult moments", "Saying sorry and asking forgiveness", "Ocean mazes, matching and counting games"],
+  "extras": "Includes activity pages and a certificate of achievement.",
+  "previews": [],
+  "activity": {"slug": "ocean-maze", "title": "Help the little fish find the whale", "desc": "A free printable ocean maze for little explorers."}
+ },
+ "B0HL4X474Y": {
+  "slug": "smart-tech-abcs",
+  "about": "An A-to-Z colouring adventure that turns little ones' curiosity about tablets, robots and computers into healthy habits. Each letter introduces a tech word with a picture to colour, alongside gentle lessons about screen breaks and digital kindness, plus observation games that need no screen at all.",
+  "learn": ["The alphabet with fun tech words", "Healthy screen habits and screen breaks", "Digital kindness online and offline", "Colouring and observation games, no screen needed"],
+  "extras": "A colouring book: perfect for crayons and pencils.",
+  "previews": [],
+  "activity": {"slug": "screen-time-promise", "title": "My screen-time promise", "desc": "A free printable family screen-time promise and traffic-light chart."}
+ }
+}

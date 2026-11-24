@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://brightmindkids.github.io/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://brightmindkids.github.io/books.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://brightmindkids.github.io/games.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://brightmindkids.github.io/manners.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://brightmindkids.github.io/bedtime.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://brightmindkids.github.io/books/little-fennec.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://brightmindkids.github.io/books/the-world-upon-the-waves.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://brightmindkids.github.io/books/yunus-and-the-giant-whale.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://brightmindkids.github.io/books/smart-tech-abcs.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://brightmindkids.github.io/activities/colour-finn.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://brightmindkids.github.io/activities/count-the-animals.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://brightmindkids.github.io/activities/ocean-maze.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://brightmindkids.github.io/activities/screen-time-promise.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://brightmindkids.github.io/posts/afraid-of-the-dark-gentle-bedtime-help.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://brightmindkids.github.io/posts/mazes-coloring-activity-books-more-than-busywork.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://brightmindkids.github.io/posts/two-skills-that-predict-reading-success-sounds-and-words.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://brightmindkids.github.io/posts/reading-to-dogs-calm-confident-readers.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://brightmindkids.github.io/posts/holiday-picture-books-2026.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://brightmindkids.github.io/posts/learning-to-read-vs-choosing-to-read.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://brightmindkids.github.io/posts/reading-for-fun-is-rising-again.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

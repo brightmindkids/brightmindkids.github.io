@@ -119,7 +119,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
     </a>
     <nav aria-label="Main">
       <a href="#">Stories</a>
-      <a href="#" data-cat="Book picks">Book picks</a>
+      <a href="books.html">Books</a>
       <a href="#" data-cat="Parents">For parents</a>
       <a href="games.html">Kids' games</a>
       <a href="manners.html">Manners cards</a>
@@ -210,7 +210,7 @@ const safeUrl=u=>/^https?:\/\//.test(u||'')?u:'#';
 const fmt=d=>{const t=new Date(d+'T12:00:00');return isNaN(t)?esc(d):t.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})};
 let posts=[],books=[],cat='All';
 const amz=a=>'https://www.amazon.com/dp/'+encodeURIComponent(a||'');
-function renderBooks(){const el=document.getElementById('booksList');el.innerHTML=books.map(b=>`<div class="book">${b.cover?`<img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy">`:`<div class="nocover">${esc(b.title)}</div>`}<div><h3>${esc(b.title)}</h3>${b.subtitle?`<p style="margin:2px 0 0;font-weight:700">${esc(b.subtitle)}</p>`:''}<p>${esc(b.blurb)}${b.ages?` Ages ${esc(b.ages)}.`:''}</p><a class="btn" href="${esc(amz(b.asin))}">See it on Amazon</a></div></div>`).join('');document.getElementById('bookCount').textContent=books.length>2?books.length+' books so far.':''}
+function renderBooks(){const el=document.getElementById('booksList');el.innerHTML=books.map(b=>`<div class="book">${b.cover?`<img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy">`:`<div class="nocover">${esc(b.title)}</div>`}<div><h3>${esc(b.title)}</h3>${b.subtitle?`<p style="margin:2px 0 0;font-weight:700">${esc(b.subtitle)}</p>`:''}<p>${esc(b.blurb)}${b.ages?` Ages ${esc(b.ages)}.`:''}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${b.page&&/^books\/[\w-]+\.html$/.test(b.page)?`<a class="btn" href="${esc(b.page)}">See the book</a>`:''}<a class="btn" style="background:#fff" href="${esc(amz(b.asin))}">Amazon</a></div></div></div>`).join('');document.getElementById('bookCount').textContent=books.length>2?books.length+' books so far.':''}
 const stars=document.getElementById('stars');
 for(let i=0;i<34;i++){const x=(i*137)%640,y=(i*71)%250;const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x);c.setAttribute('cy',y+8);c.setAttribute('r',i%5?1.6:2.6);c.setAttribute('opacity',i%3?.55:.9);if(i%4==0){c.setAttribute('class','twinkle');c.style.animationDelay=(i%7)*.4+'s'}stars.appendChild(c)}
 
@@ -223,7 +223,7 @@ function thumb(p,i){
   <path d="M120 175 L200 182 L200 112 L120 104Z" fill="#FFF8EC"/><path d="M280 175 L200 182 L200 112 L280 104Z" fill="#F1E3C6"/>
   <path d="M200 112 V182" stroke="${c}" stroke-width="3"/><path d="M196 92l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z" fill="#FFC94A"/></svg>`;
 }
-function cardHTML(p,i){return `<a class="card" href="#${esc(p.slug)}"><div class="thumb">${thumb(p,i)}</div><div class="txt"><div class="meta"><span class="cat">${esc(p.category)}</span><span>${fmt(p.date)}</span><span>${esc(p.read)} min read</span></div><h3>${esc(p.title)}</h3><p class="ex">${esc(p.excerpt)}</p></div></a>`}
+function cardHTML(p,i){return `<a class="card" href="posts/${encodeURIComponent(p.slug)}.html"><div class="thumb">${thumb(p,i)}</div><div class="txt"><div class="meta"><span class="cat">${esc(p.category)}</span><span>${fmt(p.date)}</span><span>${esc(p.read)} min read</span></div><h3>${esc(p.title)}</h3><p class="ex">${esc(p.excerpt)}</p></div></a>`}
 
 function renderList(){
   const q=document.getElementById('q').value.trim().toLowerCase();
@@ -232,7 +232,7 @@ function renderList(){
   document.getElementById('empty').hidden=list.length>0;
   if(!list.length){f.innerHTML='';g.innerHTML='';return}
   const [first,...rest]=list;
-  f.innerHTML=`<a class="feat card" href="#${esc(first.slug)}"><div class="thumb">${thumb(first,0)}</div><div class="txt"><div class="meta"><span class="cat">Latest · ${esc(first.category)}</span><span>${fmt(first.date)}</span></div><h2>${esc(first.title)}</h2><p class="ex">${esc(first.excerpt)}</p><span class="btn" style="align-self:flex-start">Read the post</span></div></a>`;
+  f.innerHTML=`<a class="feat card" href="posts/${encodeURIComponent(first.slug)}.html"><div class="thumb">${thumb(first,0)}</div><div class="txt"><div class="meta"><span class="cat">Latest · ${esc(first.category)}</span><span>${fmt(first.date)}</span></div><h2>${esc(first.title)}</h2><p class="ex">${esc(first.excerpt)}</p><span class="btn" style="align-self:flex-start">Read the post</span></div></a>`;
   g.innerHTML=rest.map((p,i)=>cardHTML(p,i+1)).join('');
 }
 function renderChips(){
