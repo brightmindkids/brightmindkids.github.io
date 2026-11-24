@@ -9,7 +9,7 @@
 <meta property="og:description" content="Children's book news, picture-book picks and reading tips for families. New posts every day.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://brightmindkids.github.io/">
-<meta property="og:image" content="https://brightmindkids.github.io/fennec.jpg">
+<meta property="og:image" content="https://brightmindkids.github.io/covers/B0HSJPX51V.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='17' fill='%23FFC94A'/%3E%3Cpath d='M7 22c4-2 7-2 10 0 3-2 6-2 10 0V11c-4-2-7-2-10 0-3-2-6-2-10 0z' fill='%231F2A4A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,11 +178,8 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
   <section class="shelf" id="books">
     <div class="wrap">
       <h2>From our own shelf</h2>
-      <p>We write picture books too. Gentle stories for bedtime and big feelings, for children aged 3 to 8.</p>
-      <div class="books">
-        <div class="book"><img src="fennec.jpg" alt="Cover of Who's There, Little Fennec?"><div><h3>Who's There, Little Fennec?</h3><p>A cozy bedtime story about a little desert fox who learns that night-time sounds are nothing to fear.</p><a class="btn" href="https://www.amazon.com/dp/B0HSJPX51V">See it on Amazon</a></div></div>
-        <div class="book"><img src="waves.jpg" alt="Cover of The World Upon the Waves"><div><h3>The World Upon the Waves</h3><p>The story of Prophet Nuh and the Great Ark, told with warmth for ages 4 to 8: patience, faith and kindness.</p><a class="btn" href="https://www.amazon.com/dp/B0HSJS45XZ">See it on Amazon</a></div></div>
-      </div>
+      <p>We write picture books too. Gentle stories for bedtime and big feelings, for children aged 3 to 8. <span id="bookCount"></span></p>
+      <div class="books" id="booksList"></div>
     </div>
   </section>
 </main>
@@ -197,7 +194,9 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const safeColor=c=>/^#[0-9a-fA-F]{3,8}$/.test(c||'')?c:'#236A78';
 const safeUrl=u=>/^https?:\/\//.test(u||'')?u:'#';
 const fmt=d=>{const t=new Date(d+'T12:00:00');return isNaN(t)?esc(d):t.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})};
-let posts=[],cat='All';
+let posts=[],books=[],cat='All';
+const amz=a=>'https://www.amazon.com/dp/'+encodeURIComponent(a||'');
+function renderBooks(){const el=document.getElementById('booksList');el.innerHTML=books.map(b=>`<div class="book"><img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy"><div><h3>${esc(b.title)}</h3>${b.subtitle?`<p style="margin:2px 0 0;font-weight:700">${esc(b.subtitle)}</p>`:''}<p>${esc(b.blurb)}${b.ages?` Ages ${esc(b.ages)}.`:''}</p><a class="btn" href="${esc(amz(b.asin))}">See it on Amazon</a></div></div>`).join('');document.getElementById('bookCount').textContent=books.length>2?books.length+' books so far.':''}
 const stars=document.getElementById('stars');
 for(let i=0;i<34;i++){const x=(i*137)%640,y=(i*71)%250;const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x);c.setAttribute('cy',y+8);c.setAttribute('r',i%5?1.6:2.6);c.setAttribute('opacity',i%3?.55:.9);if(i%4==0){c.setAttribute('class','twinkle');c.style.animationDelay=(i%7)*.4+'s'}stars.appendChild(c)}
 
@@ -232,14 +231,14 @@ function block(b){
   return `<p>${esc(b.p)}</p>`;
 }
 function renderPost(p){
-  const i=posts.indexOf(p);const book=i%2?{img:'waves.jpg',t:'The World Upon the Waves',d:'Prophet Nuh and the Great Ark, a gentle story of patience and faith for ages 4 to 8.',u:'https://www.amazon.com/dp/B0HSJS45XZ'}:{img:'fennec.jpg',t:"Who's There, Little Fennec?",d:'A cozy bedtime story about a little fox who learns the night is nothing to fear.',u:'https://www.amazon.com/dp/B0HSJPX51V'};
+  const i=posts.indexOf(p);const bk=books.length?books[i%books.length]:null;const book=bk?{img:bk.cover,t:bk.title,d:bk.blurb,u:amz(bk.asin)}:null;
   const el=document.getElementById('post');
   el.innerHTML=`<a class="back" href="#">← All stories</a><div class="thumb">${thumb(p,i)}</div>
   <div class="meta"><span class="cat">${esc(p.category)}</span><span>${fmt(p.date)}</span><span>${esc(p.read)} min read</span></div>
   <h1>${esc(p.title)}</h1>${(p.body||[]).map(block).join('')}
   ${(p.sources||[]).length?`<div class="src"><h3>Sources</h3><ul>${p.sources.map(s=>`<li><a href="${esc(safeUrl(s.url))}">${esc(s.title)}</a></li>`).join('')}</ul></div>`:''}
   <button class="copy" id="copyLink">Copy link to this post</button>
-  <div class="plug"><img src="${book.img}" alt=""><div><b style="font-family:Fredoka,sans-serif;font-size:19px">${esc(book.t)}</b><p>${esc(book.d)}</p><a class="btn" href="${book.u}">See it on Amazon</a></div></div>`;
+  ${book?`<div class="plug"><img src="${esc(book.img)}" alt=""><div><b style="font-family:Fredoka,sans-serif;font-size:19px">${esc(book.t)}</b><p>${esc(book.d)}</p><a class="btn" href="${esc(book.u)}">See it on Amazon</a></div></div>`:''}`;
   document.title=p.title+' · The Story Corner';
   document.getElementById('copyLink').addEventListener('click',e=>{navigator.clipboard?.writeText(location.href).then(()=>e.target.textContent='Link copied',()=>e.target.textContent='Copy the address bar link')});
 }
@@ -253,6 +252,7 @@ document.getElementById('chips').addEventListener('click',e=>{const b=e.target.c
 document.querySelectorAll('nav a[data-cat]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();cat=a.dataset.cat;history.replaceState(null,'','#latest');route();renderChips();renderList();document.getElementById('latest').scrollIntoView()}));
 document.getElementById('q').addEventListener('input',renderList);
 window.addEventListener('hashchange',route);
+fetch('books.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{books=Array.isArray(d)?d.filter(b=>b&&b.asin):[];renderBooks();route()}).catch(()=>{});
 fetch('posts.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
   posts=(Array.isArray(d)?d:[]).filter(p=>p&&p.slug&&p.status!=='draft').sort((a,b)=>String(b.date).localeCompare(String(a.date)));
   renderChips();renderList();route();
