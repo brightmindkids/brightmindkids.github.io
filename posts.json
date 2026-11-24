@@ -1,5 +1,62 @@
 [
  {
+  "slug": "reading-to-dogs-calm-confident-readers",
+  "title": "Why reading to a dog helps shy readers (and how to try it at home)",
+  "date": "2026-11-24",
+  "category": "Parents",
+  "read": 3,
+  "color": "#3C8D5A",
+  "excerpt": "Libraries are inviting children to read aloud to calm therapy dogs, and research suggests the gentle audience can lift confidence. Here's how to borrow the idea at home, with or without a pet.",
+  "body": [
+   {
+    "p": "Last week a Florida library system made local news for a simple idea: children reading picture books aloud to a dog. The Alachua County Library District runs a Read With a Dog programme in which elementary-aged children sit beside a certified therapy dog and read to it. Librarians and parents told WUFT News they have seen children grow more confident."
+   },
+   {
+    "p": "Why a dog? A dog never corrects a mispronounced word, never sighs and never looks at the clock. For a child who is still sounding out words, that patient, non-judging listener can take the pressure off."
+   },
+   {
+    "h": "What the research says"
+   },
+   {
+    "p": "The evidence is encouraging but still small. A 2022 study in the Early Childhood Education Journal followed 24 Canadian children aged about 7 to 8 who needed extra reading support. Each child spent eight weeks reading to a dog and eight weeks reading to an adult, about 15 minutes a week. Oral reading and comprehension improved in both programmes, so the dog was not magic. But the children were noticeably more enthusiastic about the dog sessions, and only the dog sessions were described as calm. Parents and teachers saw better attitudes to reading after both."
+   },
+   {
+    "p": "An earlier UC Davis project found similar gains in reading fluency among children who read to rescue dogs each week. Even so, researchers are careful: a reading dog builds comfort and motivation, while skills still come from teaching and practice."
+   },
+   {
+    "h": "How to bring the idea home"
+   },
+   {
+    "ul": [
+     "Ask your local library whether it hosts a reading-dog session.",
+     "If you have a calm family pet, invite your child to read a short book to it. Five to ten minutes is plenty.",
+     "No pet? A favourite stuffed animal works too. Let your child be the teacher who shows the pictures and reads the story.",
+     "Choose easy, familiar books for these sessions. The goal is fluency and fun, not a challenge.",
+     "Stay nearby but quiet. Resist correcting every slip; praise the effort afterwards.",
+     "Younger children (3 to 5) can 'read' by retelling a story from the pictures. That counts too."
+    ]
+   },
+   {
+    "tip": "Tonight, set out a cushion, a teddy or the family dog, and a book your child already knows well. Ask: Can you read this one to Teddy? Then just listen."
+   }
+  ],
+  "sources": [
+   {
+    "title": "WUFT News: Alachua County Library District helps children build reading skills and confidence by reading aloud to dogs",
+    "url": "https://www.wuft.org/animals/2026-11-18/alachua-county-library-district-helps-children-build-reading-skills-and-confidence-by-reading-aloud-to-dogs"
+   },
+   {
+    "title": "Early Childhood Education Journal (via PMC): Supporting Young Readers, reading aloud to dogs or adults",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9589535"
+   },
+   {
+    "title": "UC Davis: Reading to Rover, does it really help children?",
+    "url": "https://www.ucdavis.edu/news/reading-rover-does-it-really-help-children-veterinary-school-says-%E2%80%98yes%E2%80%99"
+   }
+  ],
+  "image": "images/reading-to-dogs-calm-confident-readers.jpg"
+ },
+ {
   "slug": "holiday-picture-books-2026",
   "title": "Cozy picture books are topping the 2026 holiday gift lists",
   "date": "2026-11-24",
