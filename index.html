@@ -60,6 +60,23 @@ nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.12);outline:none}
 @keyframes floaty{50%{transform:translateY(-10px)}}
 @media(max-width:700px){.hero.sky{min-height:560px}.bigcloud{background:#fff;border-radius:36px;padding:32px 22px}}
 @media(prefers-reduced-motion:reduce){.floaty,.floaty2{animation:none}}
+
+.ocean{position:relative;background:linear-gradient(#A9DAE2,#5FB3C4 70%,#4A9DB0);padding:40px 0 120px;overflow:hidden}
+.ocean::before{content:"";position:absolute;left:0;right:0;top:-1px;height:28px;background:radial-gradient(circle at 30px 0,#FDEDE3 29px,transparent 30px) 0 0/60px 28px repeat-x;z-index:1}
+.sea{position:absolute;inset:0;pointer-events:none}
+.fish{position:absolute;left:0;display:block;animation:swim linear infinite}
+.fish svg{width:100%;height:auto;display:block;animation:wiggle 1.4s ease-in-out infinite}
+.fish.rev{animation-name:swimback}.fish.rev svg{transform:scaleX(-1)}
+@keyframes swim{from{transform:translateX(110vw)}to{transform:translateX(-120px)}}
+@keyframes swimback{from{transform:translateX(-120px)}to{transform:translateX(110vw)}}
+@keyframes wiggle{50%{translate:0 6px}}
+.fish.rev svg{animation-name:wiggleR}@keyframes wiggleR{50%{translate:0 6px}}
+.bub{position:absolute;bottom:60px;border-radius:50%;border:2px solid rgba(255,255,255,.8);background:rgba(255,255,255,.25);animation:bubble 9s ease-in infinite}
+@keyframes bubble{0%{transform:translateY(0);opacity:0}10%{opacity:1}100%{transform:translateY(-110vh);opacity:0}}
+.weeds{position:absolute;left:0;right:0;bottom:0;width:100%;height:120px}
+.ocean .chip{background:#fff}.ocean .chip[aria-pressed=true]{background:var(--navy);color:#fff}
+.ocean .empty{color:#fff}
+@media(prefers-reduced-motion:reduce){.fish,.fish svg,.bub{animation:none}.bub{display:none}}
 .art{aspect-ratio:16/11;width:100%;border-radius:28px;overflow:hidden;background:#24325A}
 .art svg{width:100%;height:100%;display:block}
 .tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-block:28px 8px}
@@ -250,7 +267,9 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
     <svg class="scallop" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V20 q30-20 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0V40z" fill="var(--bg)"/></svg>
   </section>
 
-  <div class="wrap" id="latest">
+  <section class="ocean" aria-label="Latest stories">
+    <div class="sea" aria-hidden="true"><span class="fish rev" style="top:calc(100% - 110px);animation-duration:34s;animation-delay:-6s;width:120px"><svg viewBox="0 0 80 50"><path d="M8 25q26-26 52 0q-26 26-52 0z" fill="#FFC94A" stroke="#1F2A4A" stroke-width="3"/><path d="M58 25l18-14v28z" fill="#E8604C" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/><circle cx="22" cy="22" r="3.5" fill="#1F2A4A"/><path d="M34 16q6 9 0 18" fill="none" stroke="#1F2A4A" stroke-width="2.5"/></svg></span><span class="fish " style="top:calc(100% - 150px);animation-duration:42s;animation-delay:-20s;width:90px"><svg viewBox="0 0 80 50"><path d="M8 25q26-26 52 0q-26 26-52 0z" fill="#5FC2D0" stroke="#1F2A4A" stroke-width="3"/><path d="M58 25l18-14v28z" fill="#2F8F9D" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/><circle cx="22" cy="22" r="3.5" fill="#1F2A4A"/><path d="M34 16q6 9 0 18" fill="none" stroke="#1F2A4A" stroke-width="2.5"/></svg></span><span class="fish rev" style="top:4%;animation-duration:38s;animation-delay:-12s;width:100px"><svg viewBox="0 0 80 50"><path d="M8 25q26-26 52 0q-26 26-52 0z" fill="#FF9F9F" stroke="#1F2A4A" stroke-width="3"/><path d="M58 25l18-14v28z" fill="#C2547A" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/><circle cx="22" cy="22" r="3.5" fill="#1F2A4A"/><path d="M34 16q6 9 0 18" fill="none" stroke="#1F2A4A" stroke-width="2.5"/></svg></span><span class="fish " style="top:12%;animation-duration:28s;animation-delay:0s;width:110px"><svg viewBox="0 0 80 50"><path d="M8 25q26-26 52 0q-26 26-52 0z" fill="#FFC94A" stroke="#1F2A4A" stroke-width="3"/><path d="M58 25l18-14v28z" fill="#E0943A" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/><circle cx="22" cy="22" r="3.5" fill="#1F2A4A"/><path d="M34 16q6 9 0 18" fill="none" stroke="#1F2A4A" stroke-width="2.5"/></svg></span><span class="fish rev" style="top:30%;animation-duration:36s;animation-delay:-9s;width:90px"><svg viewBox="0 0 80 50"><path d="M8 25q26-26 52 0q-26 26-52 0z" fill="#E8604C" stroke="#1F2A4A" stroke-width="3"/><path d="M58 25l18-14v28z" fill="#FF9F9F" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/><circle cx="22" cy="22" r="3.5" fill="#1F2A4A"/><path d="M34 16q6 9 0 18" fill="none" stroke="#1F2A4A" stroke-width="2.5"/></svg></span><span class="fish " style="top:52%;animation-duration:32s;animation-delay:-18s;width:130px"><svg viewBox="0 0 80 50"><path d="M8 25q26-26 52 0q-26 26-52 0z" fill="#FF9F43" stroke="#1F2A4A" stroke-width="3"/><path d="M58 25l18-14v28z" fill="#FFC94A" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/><circle cx="22" cy="22" r="3.5" fill="#1F2A4A"/><path d="M34 16q6 9 0 18" fill="none" stroke="#1F2A4A" stroke-width="2.5"/></svg></span><span class="fish rev" style="top:70%;animation-duration:40s;animation-delay:-4s;width:80px"><svg viewBox="0 0 80 50"><path d="M8 25q26-26 52 0q-26 26-52 0z" fill="#B983FF" stroke="#1F2A4A" stroke-width="3"/><path d="M58 25l18-14v28z" fill="#6A5ACD" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/><circle cx="22" cy="22" r="3.5" fill="#1F2A4A"/><path d="M34 16q6 9 0 18" fill="none" stroke="#1F2A4A" stroke-width="2.5"/></svg></span><span class="fish " style="top:86%;animation-duration:30s;animation-delay:-24s;width:120px"><svg viewBox="0 0 80 50"><path d="M8 25q26-26 52 0q-26 26-52 0z" fill="#6BCB77" stroke="#1F2A4A" stroke-width="3"/><path d="M58 25l18-14v28z" fill="#2F8F9D" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/><circle cx="22" cy="22" r="3.5" fill="#1F2A4A"/><path d="M34 16q6 9 0 18" fill="none" stroke="#1F2A4A" stroke-width="2.5"/></svg></span><span class="fish rev" style="top:44%;animation-duration:46s;animation-delay:-30s;width:100px"><svg viewBox="0 0 80 50"><path d="M8 25q26-26 52 0q-26 26-52 0z" fill="#FF8FA3" stroke="#1F2A4A" stroke-width="3"/><path d="M58 25l18-14v28z" fill="#E8604C" stroke="#1F2A4A" stroke-width="3" stroke-linejoin="round"/><circle cx="22" cy="22" r="3.5" fill="#1F2A4A"/><path d="M34 16q6 9 0 18" fill="none" stroke="#1F2A4A" stroke-width="2.5"/></svg></span><span class="bub" style="left:6%;animation-delay:0s;width:12px;height:12px"></span><span class="bub" style="left:18%;animation-delay:-3s;width:8px;height:8px"></span><span class="bub" style="left:33%;animation-delay:-6s;width:14px;height:14px"></span><span class="bub" style="left:49%;animation-delay:-2s;width:10px;height:10px"></span><span class="bub" style="left:63%;animation-delay:-8s;width:12px;height:12px"></span><span class="bub" style="left:78%;animation-delay:-4s;width:9px;height:9px"></span><span class="bub" style="left:92%;animation-delay:-7s;width:13px;height:13px"></span><svg class="weeds" viewBox="0 0 1440 120" preserveAspectRatio="none"><g fill="#2F8F9D" opacity=".55"><path d="M60 120q-20-60 10-110q10 60-10 110z"/><path d="M90 120q20-50-6-90q-4 50 6 90z"/><path d="M1340 120q-20-70 14-118q8 60-14 118z"/><path d="M1380 120q18-50-6-84q-6 46 6 84z"/><path d="M720 120q-14-40 8-70q6 40-8 70z"/></g><path d="M0 120V100q120-20 240 0t240 0 240 0 240 0 240 0 240 0V120z" fill="#F4E3C3"/></svg></div>
+  <div class="wrap" id="latest" style="position:relative;z-index:1">
     <div class="tools" role="toolbar" aria-label="Filter posts">
       <div id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
       <label class="search"><span hidden>Search posts</span><input id="q" type="search" placeholder="Search posts" aria-label="Search posts"></label>
@@ -259,6 +278,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty" hidden>No posts match that search yet. Try another word.</p>
   </div>
+  </section>
 
   <section style="background:#FFC94A;padding:clamp(28px,4vw,48px) 0">
     <div class="wrap" style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between">
