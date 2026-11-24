@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bedtime Routine Chart · Bright Mind Kids</title>
+<meta name="description" content="Free printable bedtime routine checklist for kids aged 3 to 8: tidy up, brush teeth, pyjamas, story and goodnight. Tick it on screen or print a weekly chart.">
+<meta property="og:title" content="Free printable bedtime routine chart for kids">
+<meta property="og:description" content="A friendly before-bed checklist: tick it tonight on screen or print a weekly star chart.">
+<meta property="og:url" content="https://brightmindkids.github.io/bedtime.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='17' fill='%23FFC94A'/%3E%3Cpath d='M7 22c4-2 7-2 10 0 3-2 6-2 10 0V11c-4-2-7-2-10 0-3-2-6-2-10 0z' fill='%231F2A4A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1F2A4A;--night:#18213D;--sun:#FFC94A;--cream:#FFF8EC;--teal:#236A78;--soft:#5A6482}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--cream);color:var(--navy);font:17px/1.55 Nunito,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Fredoka,Nunito,sans-serif;line-height:1.08;margin:0;text-wrap:balance}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 max(5vw,16px)}
+header{background:var(--navy);color:var(--cream)}
+.bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;font:600 21px Fredoka,sans-serif;text-decoration:none}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+nav a{text-decoration:none;font-weight:700;font-size:15px;padding:10px 14px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+nav a:hover,nav a:focus-visible,nav a[aria-current]{background:rgba(255,255,255,.14);outline:none}
+.hero{background:linear-gradient(var(--navy),var(--night));color:var(--cream);padding:8px 0 40px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(34px,5vw,52px)}.hero h1 span{color:var(--sun)}
+.hero p{color:#D9DEEC;max-width:36em;margin:12px 0 0}
+.moon{position:absolute;right:max(5vw,16px);top:10px;width:clamp(70px,12vw,120px);opacity:.95}
+.tabs{position:relative;z-index:1;display:flex;gap:8px;flex-wrap:wrap;background:#fff;border-radius:22px;padding:12px;margin:-22px 0 24px;box-shadow:0 12px 30px -20px rgba(31,42,74,.6);align-items:center}
+button{font:800 16px Nunito,sans-serif;border:0;border-radius:999px;padding:10px 18px;min-height:48px;cursor:pointer;background:#F3EAD6;color:var(--navy)}
+button.main{background:var(--sun)}
+button[aria-pressed=true]{background:var(--navy);color:#fff}
+button:focus-visible,input:focus-visible,label:focus-within{outline:3px solid var(--teal);outline-offset:2px}
+.sp{flex:1}
+.panel{background:#fff;border-radius:28px;padding:clamp(16px,3vw,30px);margin-bottom:30px;box-shadow:0 12px 30px -20px rgba(31,42,74,.6)}
+.prog{height:22px;background:#EAF4FB;border-radius:999px;overflow:hidden;margin:10px 0 18px}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,#FFC94A,#E0943A);border-radius:999px;transition:width .4s}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:12px}
+.task{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:20px;background:#FFF8EC;border:3px solid #F3EAD6;cursor:pointer;min-height:76px;font:600 19px Fredoka,sans-serif;user-select:none}
+.task input{position:absolute;opacity:0;pointer-events:none}
+.task svg{width:52px;height:52px;flex:none}
+.task .tick{margin-left:auto;width:34px;height:34px;border-radius:50%;border:3px solid #D9C9A5;flex:none;display:grid;place-items:center;font-size:18px;color:#fff}
+.task.on{background:#DFF3E4;border-color:#6BCB77}
+.task.on .tick{background:#6BCB77;border-color:#6BCB77}
+.task.on .tick::after{content:"✓"}
+.done{display:none;margin-top:18px;background:var(--navy);color:var(--cream);border-radius:22px;padding:20px;text-align:center;font:600 24px Fredoka,sans-serif}
+.done.show{display:block;animation:pop .4s}
+@keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+.opts{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.opts label{display:flex;gap:8px;align-items:center;font-weight:700}
+.opts input[type=text]{font:16px Nunito,sans-serif;padding:10px 14px;border-radius:14px;border:2px solid #E3D8C2;min-height:46px;width:min(100%,240px)}
+.opts input[type=checkbox]{width:22px;height:22px}
+/* printable chart */
+.chart{border-collapse:separate;border-spacing:0;width:100%}
+.chart th,.chart td{border-bottom:2px solid #F3EAD6;padding:6px 4px;text-align:center}
+.chart th{font:600 15px Fredoka,sans-serif;color:var(--soft)}
+.chart td.t{text-align:left;font:600 16px Fredoka,sans-serif;display:flex;align-items:center;gap:8px;border:0}
+.chart td.t svg{width:36px;height:36px;flex:none}
+.chart .c{width:34px;height:34px;border:2.5px solid #D9C9A5;border-radius:50%;display:inline-block}
+.chart tr.star td{border-bottom:0;padding-top:10px}
+.chart .s{width:34px;height:34px}
+.ctitle{display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap}
+.ctitle h2{font-size:30px}.ctitle .nm{border-bottom:3px dotted #C9B78F;min-width:200px;font:600 26px Fredoka,sans-serif;padding:0 6px}
+.cnote{font-size:14px;color:var(--soft);margin-top:10px}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-bottom:40px}
+.tips div{background:#EAF4FB;border-radius:20px;padding:18px 22px}
+.tips h2{font-size:22px;margin-bottom:6px}.tips ul{margin:0;padding-left:20px}.tips li{margin:4px 0}
+footer{background:var(--navy);color:#C9D0E2;padding:24px 0;font-size:15px}
+[hidden]{display:none!important}
+@media(max-width:640px){.scroll{overflow-x:auto}.chart{min-width:560px}}
+@media print{
+  @page{size:A4 landscape;margin:9mm}
+  header,.hero,.tabs,.tips,footer,#tonight,.opts,.noprint{display:none!important}
+  #chart[hidden]{display:block!important}
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .panel{box-shadow:none;padding:0;margin:0;border-radius:0}
+  .chart th,.chart td{padding:3px 2px}
+  .chart td.t{font-size:13pt}
+  .chart td.t svg{width:30px;height:30px}
+  .chart .c,.chart .s{width:28px;height:28px}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media(prefers-reduced-motion:reduce){.prog i{transition:none}.done.show{animation:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="./">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#FFC94A"/><path d="M7 22c4-2 7-2 10 0 3-2 6-2 10 0V11c-4-2-7-2-10 0-3-2-6-2-10 0z" fill="#1F2A4A"/><path d="M17 11v11" stroke="#FFC94A" stroke-width="1.6"/></svg>
+      Bright Mind Kids
+    </a>
+    <nav aria-label="Main">
+      <a href="./">Stories</a>
+      <a href="games.html">Kids' games</a>
+      <a href="manners.html">Manners cards</a>
+      <a href="bedtime.html" aria-current="page">Bedtime chart</a>
+      <a href="./#books">Our books</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="moon" viewBox="0 0 100 100" aria-hidden="true"><path d="M62 10a42 42 0 1 0 28 64A36 36 0 0 1 62 10z" fill="#FFC94A"/><circle cx="20" cy="20" r="3" fill="#FFF8EC"/><circle cx="88" cy="22" r="2.5" fill="#FFF8EC"/></svg>
+  <div class="wrap">
+    <h1>Before-bed <span>checklist</span></h1>
+    <p>A calm, predictable routine helps little ones wind down. Tick the steps tonight on a phone or tablet, or print a weekly chart for the bedroom wall.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="tabs" role="tablist">
+    <button id="tTonight" aria-pressed="true">Tick it tonight</button>
+    <button id="tChart" aria-pressed="false">Weekly chart to print</button>
+    <span class="sp"></span>
+    <button class="main" id="bPrint">Print the chart</button>
+  </div>
+
+  <div class="opts">
+    <label>Child's name <input type="text" id="kname" maxlength="24" placeholder="e.g. Adam"></label>
+    <label><input type="checkbox" id="prayer"> Include "Say my bedtime prayer"</label>
+  </div>
+
+  <section class="panel" id="tonight">
+    <h2 style="font-size:28px" id="tHead">Tonight's routine</h2>
+    <div class="prog" aria-hidden="true"><i id="bar"></i></div>
+    <p class="cnote" style="margin:-8px 0 14px" aria-live="polite"><span id="cnt">0</span> of <span id="tot">0</span> done</p>
+    <div class="list" id="list"></div>
+    <div class="done" id="done" role="status">All done! Sweet dreams, little star ⭐</div>
+    <div style="margin-top:14px"><button id="reset">Start again</button></div>
+  </section>
+
+  <section class="panel" id="chart" hidden>
+    <div class="ctitle">
+      <svg width="54" height="54" viewBox="0 0 100 100" aria-hidden="true"><path d="M62 10a42 42 0 1 0 28 64A36 36 0 0 1 62 10z" fill="#FFC94A" stroke="#E0943A" stroke-width="3"/></svg>
+      <h2>My bedtime routine</h2>
+      <span class="nm" id="nmLine">&nbsp;</span>
+    </div>
+    <div class="scroll"><table class="chart" id="tbl"></table></div>
+    <p class="cnote">Colour a circle for each step you do. Five full nights earns a special star! · brightmindkids.github.io</p>
+  </section>
+
+  <div class="tips">
+    <div>
+      <h2>Tips for a calm bedtime</h2>
+      <ul>
+        <li>Keep the same order every night. Children relax when they know what comes next.</li>
+        <li>Turn screens off a while before bed and dim the lights.</li>
+        <li>Let your child tick or colour each step themselves.</li>
+        <li>Praise the effort: "You brushed your teeth all by yourself!"</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Make it your own</h2>
+      <ul>
+        <li>Add your child's name so the chart feels like theirs.</li>
+        <li>Choose a small weekly reward: picking Saturday's story or a park trip.</li>
+        <li>Looking for a story for the "Choose a story" step? See <a href="./#books">our picture books</a>.</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer><div class="wrap">© 2026 Bright Mind Kids · Free for personal and classroom use · <a href="./">The Story Corner</a> · <a href="games.html">Kids' games</a> · <a href="manners.html">Manners cards</a></div></footer>
+
+<script>
+{
+const S='stroke="#1F2A4A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"';
+const IC={
+ toys:`<rect x="18" y="48" width="64" height="38" rx="6" fill="#E0943A" ${S}/><circle cx="36" cy="38" r="12" fill="#E8604C" ${S}/><rect x="52" y="24" width="22" height="22" rx="4" fill="#4D96FF" ${S}/>`,
+ bath:`<path d="M12 50h76v10a24 24 0 0 1-24 24H36a24 24 0 0 1-24-24z" fill="#EAF4FB" ${S}/><circle cx="34" cy="38" r="8" fill="#fff" ${S}/><circle cx="52" cy="30" r="10" fill="#fff" ${S}/><circle cx="70" cy="40" r="7" fill="#fff" ${S}/><path d="M28 84l-4 8M72 84l4 8" ${S}/>`,
+ pyjamas:`<path d="M34 14l-22 14 8 16 10-6v48h40V38l10 6 8-16-22-14q-16 12-32 0z" fill="#6A5ACD" ${S}/><path d="M42 50l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1zM64 66l2 4 4 .5-3 3 1 4-4-2-4 2 1-4-3-3 4-.5z" fill="#FFC94A"/>`,
+ teeth:`<rect x="14" y="44" width="56" height="14" rx="7" fill="#2F8F9D" ${S}/><rect x="66" y="30" width="22" height="18" rx="4" fill="#fff" ${S}/><path d="M70 30v-8M77 30v-10M84 30v-8" ${S}/><circle cx="30" cy="80" r="6" fill="#EAF4FB" ${S}/><circle cx="46" cy="76" r="4" fill="#EAF4FB" ${S}/>`,
+ toilet:`<rect x="26" y="12" width="40" height="28" rx="6" fill="#fff" ${S}/><path d="M18 46h64q0 22-22 26v14H40V72q-22-4-22-26z" fill="#EAF4FB" ${S}/>`,
+ basket:`<path d="M18 40h64l-8 46H26z" fill="#C2547A" ${S}/><path d="M26 54h48M30 70h40" ${S}/><path d="M34 40q4-22 16-20 10 2 16 20" fill="#FFC94A" ${S}/>`,
+ story:`<path d="M50 30q-18-10-38-6v54q20-4 38 6 18-10 38-6V24q-20-4-38 6z" fill="#FFF3D6" ${S}/><path d="M50 30v54" ${S}/><path d="M22 40q10-2 20 2M22 52q10-2 20 2M58 42q10-4 20-2M58 54q10-4 20-2" stroke="#C9B78F" stroke-width="4" stroke-linecap="round"/>`,
+ thanks:`<path d="M50 86C22 68 12 54 12 38a19 19 0 0 1 38-6 19 19 0 0 1 38 6c0 16-10 30-38 48z" fill="#E8604C" ${S}/><path d="M80 10l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="#FFC94A" ${S}/>`,
+ hug:`<circle cx="34" cy="40" r="18" fill="#F2C29B" ${S}/><circle cx="66" cy="44" r="15" fill="#C98A63" ${S}/><path d="M14 90q20-28 40-14 20-14 34 14" fill="#4D96FF" ${S}/><path d="M50 20c-6-8-18-4-14 4 2 4 14 8 14 8s12-4 14-8c4-8-8-12-14-4z" fill="#E8604C" ${S}/>`,
+ prayer:`<path d="M30 86V52q0-16 12-30 6 6 6 20v44" fill="#F2C29B" ${S}/><path d="M70 86V52q0-16-12-30-6 6-6 20v44" fill="#F2C29B" ${S}/><path d="M20 20l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1zM82 14l2 5 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1z" fill="#FFC94A"/>`,
+ lights:`<path d="M62 10a40 40 0 1 0 28 62A34 34 0 0 1 62 10z" fill="#FFC94A" ${S}/><path d="M64 30h14l-14 16h14M78 52h10l-10 12h10" fill="none" stroke="#6A5ACD" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`
+};
+const BASE=[['toys','Tidy my toys'],['bath','Bath or wash up'],['pyjamas','Put on pyjamas'],['basket','Clothes in the basket'],['toilet','Go to the toilet'],['teeth','Brush my teeth'],['story','Choose a story'],['thanks','Say thank you for my day'],['hug','Hug and say goodnight'],['lights','Lights out, sweet dreams']];
+const nameEl=document.getElementById('kname'),pray=document.getElementById('prayer');
+let ticks=new Set();
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+nameEl.value=store.get('bmk-name')||'';pray.checked=store.get('bmk-prayer')==='1';
+const tasks=()=>{const t=BASE.slice();if(pray.checked)t.splice(9,0,['prayer','Say my bedtime prayer']);return t};
+const ic=k=>`<svg viewBox="0 0 100 100" aria-hidden="true">${IC[k]}</svg>`;
+function render(){
+  const T=tasks(),nm=nameEl.value.trim();
+  document.getElementById('tHead').textContent=nm?nm+"'s routine tonight":"Tonight's routine";
+  document.getElementById('nmLine').textContent=nm||' ';
+  ticks=new Set([...ticks].filter(k=>T.some(t=>t[0]===k)));
+  document.getElementById('list').innerHTML=T.map(([k,l])=>`<label class="task${ticks.has(k)?' on':''}" data-k="${k}"><input type="checkbox"${ticks.has(k)?' checked':''}>${ic(k)}<span>${l}</span><span class="tick"></span></label>`).join('');
+  const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  document.getElementById('tbl').innerHTML=`<tr><th style="text-align:left">Step</th>${days.map(d=>`<th>${d}</th>`).join('')}</tr>`+
+    T.map(([k,l])=>`<tr><td class="t">${ic(k)}${l}</td>${days.map(()=>'<td><span class="c"></span></td>').join('')}</tr>`).join('')+
+    `<tr class="star"><td class="t" style="font-size:17px">My star of the night</td>${days.map(()=>'<td><svg class="s" viewBox="0 0 40 40"><path d="M20 3l5 11 12 1-9 8 3 12-11-7-11 7 3-12-9-8 12-1z" fill="none" stroke="#E0943A" stroke-width="2.5" stroke-linejoin="round"/></svg></td>').join('')}</tr>`;
+  upd();
+}
+function upd(){const T=tasks().length;document.getElementById('cnt').textContent=ticks.size;document.getElementById('tot').textContent=T;
+  document.getElementById('bar').style.width=(ticks.size/T*100)+'%';document.getElementById('done').classList.toggle('show',ticks.size===T)}
+document.getElementById('list').addEventListener('change',e=>{const l=e.target.closest('.task');if(!l)return;const k=l.dataset.k;
+  if(e.target.checked){ticks.add(k);l.classList.add('on')}else{ticks.delete(k);l.classList.remove('on')}upd()});
+document.getElementById('reset').onclick=()=>{ticks.clear();render()};
+nameEl.addEventListener('input',()=>{store.set('bmk-name',nameEl.value.trim());render()});
+pray.addEventListener('change',()=>{store.set('bmk-prayer',pray.checked?'1':'0');render()});
+const tT=document.getElementById('tTonight'),tC=document.getElementById('tChart');
+const show=c=>{document.getElementById('tonight').hidden=c;document.getElementById('chart').hidden=!c;tT.setAttribute('aria-pressed',String(!c));tC.setAttribute('aria-pressed',String(c))};
+tT.onclick=()=>show(false);tC.onclick=()=>show(true);
+document.getElementById('bPrint').onclick=()=>{show(true);setTimeout(()=>window.print(),60)};
+render();
+}
+</script>
+</body>
+</html>
