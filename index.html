@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Story Corner · Bright Mind Kids</title>
+<meta name="description" content="Children's book news, picture-book picks and gentle reading tips for families with kids aged 3 to 8. New posts every day from Bright Mind Kids.">
+<meta property="og:title" content="The Story Corner · Bright Mind Kids">
+<meta property="og:description" content="Children's book news, picture-book picks and reading tips for families. New posts every day.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brightmindkids.github.io/">
+<meta property="og:image" content="https://brightmindkids.github.io/fennec.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='17' fill='%23FFC94A'/%3E%3Cpath d='M7 22c4-2 7-2 10 0 3-2 6-2 10 0V11c-4-2-7-2-10 0-3-2-6-2-10 0z' fill='%231F2A4A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, playful, trustworthy, a children's bookshop's newsletter
+   IDEA: a picture book opened at bedtime; each post is a page
+   PICTURE: an open storybook under a night sky, stars drifting up from its pages
+   COLOUR and TYPE: brand navy night, sunny yellow, cream pages, teal; Fredoka titles, Nunito text
+   LAYOUT: navy hero band, featured story, grid of cards, "our books" shelf, article view on #slug */
+:root{color-scheme:light dark;
+--bg:light-dark(#FFF8EC,#141B30);--card:light-dark(#FFFFFF,#1E2742);--ink:light-dark(#1F2A4A,#F3EEE3);
+--soft:light-dark(#5A6482,#AEB6CC);--line:light-dark(#EADFC9,#2E3858);--navy:#1F2A4A;--sun:#FFC94A;--teal:light-dark(#236A78,#5FC2D0);--chip:light-dark(#F5EBD7,#26304F)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Fredoka,Nunito,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,16px)}
+header.top{background:var(--navy);color:#FFF8EC}
+.bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;font:600 21px Fredoka,sans-serif;text-decoration:none}
+.logo svg{flex:none}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+nav a{text-decoration:none;font-weight:700;font-size:15px;padding:10px 14px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.12);outline:none}
+.hero{background:var(--navy);color:#FFF8EC;padding-bottom:clamp(28px,4vw,56px)}
+.heroGrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,4vw,56px);align-items:center;padding-top:clamp(16px,3vw,36px)}
+.hero h1{font-size:clamp(36px,5.2vw,58px);color:#FFF8EC}
+.hero h1 span{color:var(--sun)}
+.hero p{font-size:18px;color:#D9DEEC;max-width:34em;margin:16px 0 22px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,201,74,.16);color:var(--sun);font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--sun);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.art{aspect-ratio:16/11;width:100%;border-radius:28px;overflow:hidden;background:#24325A}
+.art svg{width:100%;height:100%;display:block}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-block:28px 8px}
+.chip{border:0;background:var(--chip);color:var(--ink);font:700 15px Nunito,sans-serif;padding:10px 16px;border-radius:999px;cursor:pointer;min-height:44px}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.chip:focus-visible,input:focus-visible,.btn:focus-visible,.card:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.search{margin-left:auto;flex:1 1 220px;max-width:320px}
+.search input{width:100%;font:16px Nunito,sans-serif;padding:11px 16px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink);min-height:44px}
+.feat{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:var(--card);border-radius:24px;overflow:hidden;margin:18px 0 26px;text-decoration:none;box-shadow:0 10px 30px -18px rgba(31,42,74,.5)}
+.feat .thumb{min-height:280px;position:relative}.feat .thumb svg{position:absolute;inset:0}
+.feat .txt{padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;justify-content:center;gap:12px}
+.feat h2{font-size:clamp(28px,3.4vw,40px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:22px;padding-bottom:40px}
+.card{background:var(--card);border-radius:20px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.feat.card{display:grid}
+.card .thumb{height:170px}
+.card .txt{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:22px}
+.thumb svg{width:100%;height:100%;display:block}
+.meta{font-size:14px;color:var(--soft);font-weight:700;display:flex;gap:10px;flex-wrap:wrap}
+.cat{color:var(--teal);font-weight:800}
+.ex{color:var(--soft);margin:0;font-size:16px}
+.empty{padding:40px 0;color:var(--soft);font-weight:700}
+.shelf{background:var(--teal);color:#fff;padding-block:clamp(32px,5vw,64px)}
+:root[data-theme=dark] .shelf,.shelf{--tealbg:#236A78}
+.shelf{background:#236A78}
+.shelf h2{font-size:clamp(30px,4vw,44px);color:#fff}
+.shelf>.wrap>p{color:#DCEFF2;max-width:40em}
+.books{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px;margin-top:24px}
+.book{display:grid;grid-template-columns:140px minmax(0,1fr);gap:18px;background:rgba(255,255,255,.1);border-radius:20px;padding:16px;align-items:center}
+.book img{width:140px;height:140px;object-fit:cover;border-radius:12px;box-shadow:0 8px 18px rgba(0,0,0,.25);background:#FFF8EC}
+.book h3{font-size:21px;color:#fff}
+.book p{margin:6px 0 12px;color:#DCEFF2;font-size:15px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border-radius:999px;background:var(--sun);color:#1F2A4A;font-weight:800;text-decoration:none;font-size:15px}
+footer{background:var(--navy);color:#C9D0E2;padding-block:28px;font-size:15px}
+footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+/* article */
+.post{max-width:740px;margin:0 auto;padding:28px max(5vw,16px) 56px}
+.back{display:inline-flex;align-items:center;gap:6px;font-weight:800;text-decoration:none;color:var(--teal);min-height:44px}
+.post .thumb{height:220px;border-radius:22px;overflow:hidden;margin:10px 0 24px}
+.post h1{font-size:clamp(32px,5vw,46px);margin:10px 0 12px}
+.post h2{font-size:26px;margin:30px 0 8px}
+.post p{margin:0 0 16px}
+.post ul{padding-left:22px;margin:0 0 18px}.post li{margin-bottom:8px}
+.tip{background:var(--chip);border-radius:18px;padding:18px 22px;margin:22px 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}
+.tip b{font-family:Fredoka,sans-serif;display:block;font-size:18px}
+.src{border-top:2px solid var(--line);margin-top:30px;padding-top:18px;font-size:15px}
+.src h3{font-size:18px;margin-bottom:8px}
+.src a{color:var(--teal);font-weight:700;overflow-wrap:anywhere}
+.plug{margin-top:30px;background:var(--navy);color:#FFF8EC;border-radius:20px;padding:20px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:center}
+.plug img{width:96px;height:96px;border-radius:12px;object-fit:cover}
+.plug p{margin:4px 0 10px;color:#D9DEEC;font-size:15px}
+.copy{border:2px solid var(--line);background:transparent;color:var(--ink);font:800 15px Nunito,sans-serif;border-radius:999px;padding:9px 16px;min-height:44px;cursor:pointer;margin-top:10px}
+[hidden]{display:none!important}
+@media(max-width:760px){.heroGrid,.feat{grid-template-columns:minmax(0,1fr)}.feat .thumb{min-height:200px}.search{margin-left:0;max-width:none}}
+@media(max-width:600px){nav{margin-left:0}.book{grid-template-columns:96px minmax(0,1fr)}.book img{width:96px;height:96px}.plug{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.dot,.twinkle{animation:none}.card{transition:none}}
+.twinkle{animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.3}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="#">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#FFC94A"/><path d="M7 22c4-2 7-2 10 0 3-2 6-2 10 0V11c-4-2-7-2-10 0-3-2-6-2-10 0z" fill="#1F2A4A"/><path d="M17 11v11" stroke="#FFC94A" stroke-width="1.6"/></svg>
+      Bright Mind Kids
+    </a>
+    <nav aria-label="Main">
+      <a href="#">Stories</a>
+      <a href="#" data-cat="Book picks">Book picks</a>
+      <a href="#" data-cat="Parents">For parents</a>
+      <a href="#books">Our books</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap heroGrid">
+      <div>
+        <span class="pill"><span class="dot"></span>A new post every day</span>
+        <h1 style="margin-top:16px">The <span>Story Corner</span></h1>
+        <p>Children's book news, picture-book picks and gentle reading ideas for families with little ones aged 3 to 8.</p>
+        <a class="btn" href="#latest">Read the latest</a>
+      </div>
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 640 440">
+          <defs>
+            <radialGradient id="mg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFE7A3"/><stop offset="1" stop-color="#FFC94A"/></radialGradient>
+            <linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#FFF8EC"/><stop offset="1" stop-color="#F1E3C6"/></linearGradient>
+            <linearGradient id="pg2" x1="1" x2="0"><stop offset="0" stop-color="#FFF8EC"/><stop offset="1" stop-color="#F1E3C6"/></linearGradient>
+          </defs>
+          <circle cx="520" cy="80" r="62" fill="#FFC94A" opacity=".12"/>
+          <circle cx="520" cy="80" r="42" fill="url(#mg)"/>
+          <circle cx="540" cy="70" r="40" fill="#1F2A4A"/>
+          <g id="stars" fill="#FFF8EC"></g>
+          <path d="M0 360 Q160 300 320 340 T640 320 V440 H0Z" fill="#2B3A63"/>
+          <path d="M0 395 Q200 350 380 385 T640 370 V440 H0Z" fill="#33467A"/>
+          <ellipse cx="320" cy="392" rx="220" ry="16" fill="#141B30" opacity=".5"/>
+          <path d="M110 380 L320 395 L320 238 L110 222Z" fill="#236A78"/>
+          <path d="M530 380 L320 395 L320 238 L530 222Z" fill="#1B5763"/>
+          <path d="M120 370 Q220 352 320 380 V232 Q220 205 120 222Z" fill="url(#pg)"/>
+          <path d="M520 370 Q420 352 320 380 V232 Q420 205 520 222Z" fill="url(#pg2)"/>
+          <g stroke="#D9C9A5" stroke-width="5" stroke-linecap="round">
+            <path d="M150 255 Q220 245 290 262"/><path d="M150 280 Q220 270 290 287"/><path d="M150 305 Q210 297 260 309"/>
+            <path d="M350 262 Q420 245 490 255"/><path d="M350 287 Q420 270 490 280"/>
+          </g>
+          <path d="M370 330 q20 -30 40 0 q20 -30 40 0" fill="none" stroke="#E8604C" stroke-width="6" stroke-linecap="round"/>
+          <g fill="#FFC94A">
+            <path class="twinkle" d="M300 170l7 15 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z"/>
+            <path class="twinkle" style="animation-delay:.8s" d="M380 120l5 11 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2z"/>
+            <path class="twinkle" style="animation-delay:1.6s" d="M240 110l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/>
+          </g>
+          <circle cx="335" cy="205" r="5" fill="#FFF8EC"/><circle cx="270" cy="160" r="4" fill="#FFF8EC"/><circle cx="350" cy="150" r="3" fill="#FFF8EC"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap" id="latest">
+    <div class="tools" role="toolbar" aria-label="Filter posts">
+      <div id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+      <label class="search"><span hidden>Search posts</span><input id="q" type="search" placeholder="Search posts" aria-label="Search posts"></label>
+    </div>
+    <div id="feat"></div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>No posts match that search yet. Try another word.</p>
+  </div>
+
+  <section class="shelf" id="books">
+    <div class="wrap">
+      <h2>From our own shelf</h2>
+      <p>We write picture books too. Gentle stories for bedtime and big feelings, for children aged 3 to 8.</p>
+      <div class="books">
+        <div class="book"><img src="fennec.jpg" alt="Cover of Who's There, Little Fennec?"><div><h3>Who's There, Little Fennec?</h3><p>A cozy bedtime story about a little desert fox who learns that night-time sounds are nothing to fear.</p><a class="btn" href="https://www.amazon.com/dp/B0HSJPX51V">See it on Amazon</a></div></div>
+        <div class="book"><img src="waves.jpg" alt="Cover of The World Upon the Waves"><div><h3>The World Upon the Waves</h3><p>The story of Prophet Nuh and the Great Ark, told with warmth for ages 4 to 8: patience, faith and kindness.</p><a class="btn" href="https://www.amazon.com/dp/B0HSJS45XZ">See it on Amazon</a></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<article class="post" id="post" hidden></article>
+
+<footer><div class="wrap"><span>© 2026 Bright Mind Kids · The Story Corner</span><span>Posts link to their original sources. As an Amazon author we link to our own books.</span></div></footer>
+
+<script>
+{
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeColor=c=>/^#[0-9a-fA-F]{3,8}$/.test(c||'')?c:'#236A78';
+const safeUrl=u=>/^https?:\/\//.test(u||'')?u:'#';
+const fmt=d=>{const t=new Date(d+'T12:00:00');return isNaN(t)?esc(d):t.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})};
+let posts=[],cat='All';
+const stars=document.getElementById('stars');
+for(let i=0;i<34;i++){const x=(i*137)%640,y=(i*71)%250;const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x);c.setAttribute('cy',y+8);c.setAttribute('r',i%5?1.6:2.6);c.setAttribute('opacity',i%3?.55:.9);if(i%4==0){c.setAttribute('class','twinkle');c.style.animationDelay=(i%7)*.4+'s'}stars.appendChild(c)}
+
+function thumb(p,i){
+  const c=safeColor(p.color);const seed=(p.slug||'').length+i;
+  let st='';for(let k=0;k<9;k++){const x=(k*97+seed*31)%400,y=(k*53+seed*17)%130+10;st+=`<circle cx="${x}" cy="${y}" r="${k%3?2:3.5}" fill="#FFF8EC" opacity=".8"/>`}
+  return `<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice"><rect width="400" height="220" fill="${c}"/>${st}
+  <circle cx="330" cy="50" r="26" fill="#FFC94A"/><path d="M0 180 Q120 150 220 172 T400 165 V220 H0Z" fill="#000" opacity=".14"/>
+  <path d="M120 175 L200 182 L200 112 L120 104Z" fill="#FFF8EC"/><path d="M280 175 L200 182 L200 112 L280 104Z" fill="#F1E3C6"/>
+  <path d="M200 112 V182" stroke="${c}" stroke-width="3"/><path d="M196 92l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z" fill="#FFC94A"/></svg>`;
+}
+function cardHTML(p,i){return `<a class="card" href="#${esc(p.slug)}"><div class="thumb">${thumb(p,i)}</div><div class="txt"><div class="meta"><span class="cat">${esc(p.category)}</span><span>${fmt(p.date)}</span><span>${esc(p.read)} min read</span></div><h3>${esc(p.title)}</h3><p class="ex">${esc(p.excerpt)}</p></div></a>`}
+
+function renderList(){
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  const list=posts.filter(p=>(cat==='All'||p.category===cat)&&(!q||(p.title+' '+p.excerpt+' '+p.category).toLowerCase().includes(q)));
+  const f=document.getElementById('feat'),g=document.getElementById('grid');
+  document.getElementById('empty').hidden=list.length>0;
+  if(!list.length){f.innerHTML='';g.innerHTML='';return}
+  const [first,...rest]=list;
+  f.innerHTML=`<a class="feat card" href="#${esc(first.slug)}"><div class="thumb">${thumb(first,0)}</div><div class="txt"><div class="meta"><span class="cat">Latest · ${esc(first.category)}</span><span>${fmt(first.date)}</span></div><h2>${esc(first.title)}</h2><p class="ex">${esc(first.excerpt)}</p><span class="btn" style="align-self:flex-start">Read the post</span></div></a>`;
+  g.innerHTML=rest.map((p,i)=>cardHTML(p,i+1)).join('');
+}
+function renderChips(){
+  const cats=['All',...new Set(posts.map(p=>p.category))];
+  document.getElementById('chips').innerHTML=cats.map(c=>`<button class="chip" data-c="${esc(c)}" aria-pressed="${c===cat}">${esc(c)}</button>`).join('');
+}
+function block(b){
+  if(b.h)return `<h2>${esc(b.h)}</h2>`;
+  if(b.ul)return `<ul>${b.ul.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+  if(b.tip)return `<div class="tip"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#FFC94A"/><path d="M17 8l2.6 5.6 6 .7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6-4.5-4.1 6-.7z" fill="#1F2A4A"/></svg><div><b>Try this tonight</b>${esc(b.tip)}</div></div>`;
+  return `<p>${esc(b.p)}</p>`;
+}
+function renderPost(p){
+  const i=posts.indexOf(p);const book=i%2?{img:'waves.jpg',t:'The World Upon the Waves',d:'Prophet Nuh and the Great Ark, a gentle story of patience and faith for ages 4 to 8.',u:'https://www.amazon.com/dp/B0HSJS45XZ'}:{img:'fennec.jpg',t:"Who's There, Little Fennec?",d:'A cozy bedtime story about a little fox who learns the night is nothing to fear.',u:'https://www.amazon.com/dp/B0HSJPX51V'};
+  const el=document.getElementById('post');
+  el.innerHTML=`<a class="back" href="#">← All stories</a><div class="thumb">${thumb(p,i)}</div>
+  <div class="meta"><span class="cat">${esc(p.category)}</span><span>${fmt(p.date)}</span><span>${esc(p.read)} min read</span></div>
+  <h1>${esc(p.title)}</h1>${(p.body||[]).map(block).join('')}
+  ${(p.sources||[]).length?`<div class="src"><h3>Sources</h3><ul>${p.sources.map(s=>`<li><a href="${esc(safeUrl(s.url))}">${esc(s.title)}</a></li>`).join('')}</ul></div>`:''}
+  <button class="copy" id="copyLink">Copy link to this post</button>
+  <div class="plug"><img src="${book.img}" alt=""><div><b style="font-family:Fredoka,sans-serif;font-size:19px">${esc(book.t)}</b><p>${esc(book.d)}</p><a class="btn" href="${book.u}">See it on Amazon</a></div></div>`;
+  document.title=p.title+' · The Story Corner';
+  document.getElementById('copyLink').addEventListener('click',e=>{navigator.clipboard?.writeText(location.href).then(()=>e.target.textContent='Link copied',()=>e.target.textContent='Copy the address bar link')});
+}
+function route(){
+  const h=decodeURIComponent(location.hash.slice(1));
+  const p=posts.find(x=>x.slug===h);
+  document.getElementById('home').hidden=!!p;document.getElementById('post').hidden=!p;
+  if(p){renderPost(p);window.scrollTo(0,0)}else{document.title='The Story Corner · Bright Mind Kids';if(h){const t=document.getElementById(h);if(t)t.scrollIntoView()}}
+}
+document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;cat=b.dataset.c;renderChips();renderList()});
+document.querySelectorAll('nav a[data-cat]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();cat=a.dataset.cat;history.replaceState(null,'','#latest');route();renderChips();renderList();document.getElementById('latest').scrollIntoView()}));
+document.getElementById('q').addEventListener('input',renderList);
+window.addEventListener('hashchange',route);
+fetch('posts.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+  posts=(Array.isArray(d)?d:[]).filter(p=>p&&p.slug&&p.status!=='draft').sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  renderChips();renderList();route();
+}).catch(()=>{document.getElementById('empty').hidden=false;document.getElementById('empty').textContent='Posts could not load. Please refresh the page.'});
+}
+</script>
+</body>
+</html>
