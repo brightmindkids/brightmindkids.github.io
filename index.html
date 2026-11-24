@@ -65,6 +65,8 @@ nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.12);outline:none}
 .card .txt{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
 .card h3{font-size:22px}
 .thumb svg{width:100%;height:100%;display:block}
+.pimg{width:100%;height:100%;object-fit:cover;display:block}
+.feat.card .thumb{height:auto}.feat .thumb .pimg{position:absolute;inset:0}
 .meta{font-size:14px;color:var(--soft);font-weight:700;display:flex;gap:10px;flex-wrap:wrap}
 .cat{color:var(--teal);font-weight:800}
 .ex{color:var(--soft);margin:0;font-size:16px}
@@ -86,7 +88,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 /* article */
 .post{max-width:740px;margin:0 auto;padding:28px max(5vw,16px) 56px}
 .back{display:inline-flex;align-items:center;gap:6px;font-weight:800;text-decoration:none;color:var(--teal);min-height:44px}
-.post .thumb{height:220px;border-radius:22px;overflow:hidden;margin:10px 0 24px}
+.post .thumb{height:auto;aspect-ratio:16/9;border-radius:22px;overflow:hidden;margin:10px 0 24px}
 .post h1{font-size:clamp(32px,5vw,46px);margin:10px 0 12px}
 .post h2{font-size:26px;margin:30px 0 8px}
 .post p{margin:0 0 16px}
@@ -203,6 +205,7 @@ const stars=document.getElementById('stars');
 for(let i=0;i<34;i++){const x=(i*137)%640,y=(i*71)%250;const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x);c.setAttribute('cy',y+8);c.setAttribute('r',i%5?1.6:2.6);c.setAttribute('opacity',i%3?.55:.9);if(i%4==0){c.setAttribute('class','twinkle');c.style.animationDelay=(i%7)*.4+'s'}stars.appendChild(c)}
 
 function thumb(p,i){
+  if(p.image&&/^images\/[\w.-]+$/.test(p.image))return `<img class="pimg" src="${esc(p.image)}" alt="" loading="lazy">`;
   const c=safeColor(p.color);const seed=(p.slug||'').length+i;
   let st='';for(let k=0;k<9;k++){const x=(k*97+seed*31)%400,y=(k*53+seed*17)%130+10;st+=`<circle cx="${x}" cy="${y}" r="${k%3?2:3.5}" fill="#FFF8EC" opacity=".8"/>`}
   return `<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice"><rect width="400" height="220" fill="${c}"/>${st}
