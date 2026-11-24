@@ -68,7 +68,13 @@ footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
 .signup .ok{display:none;background:var(--sun);color:var(--navy);border-radius:16px;padding:14px;font-weight:800}
 .signup.sent form{display:none}.signup.sent .ok{display:block}
 @media(max-width:720px){.signup{grid-template-columns:minmax(0,1fr)}}
-@media print{header,footer,.noprint,.signup{display:none!important}body{background:#fff}}
+@media print{header,footer,.noprint,.signup,.skyband::before,.skyband::after{display:none!important}body{background:#fff}}
+.skyband{position:relative;background:linear-gradient(#CDEBEF,#A9DAE2);padding:10px 0 56px;margin-bottom:10px}
+.skyband::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:radial-gradient(circle at 30px 30px,#FDEDE3 29px,transparent 30px) 0 0/60px 28px repeat-x}
+.skyband::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='160'%3E%3Cg fill='none' stroke='white' stroke-width='3' stroke-linecap='round' opacity='.9'%3E%3Cpath d='M40 60q6-20 26-15q9-16 27-6q22-3 20 21h-73z'/%3E%3Cpath d='M300 110q5-16 21-12q8-14 23-4q18-3 16 16h-60z'/%3E%3C/g%3E%3C/svg%3E") 0 0 repeat-x;pointer-events:none}
+.skyband>.wrap{position:relative;z-index:1}
+.skyband h1{color:#7A4A1E}
+
 """
 
 def nav(cur=""):
@@ -228,15 +234,15 @@ def build_books():
         act = b.get("activity")
         actblock = f'<section class="freeact"><div><h2>Free activity: {e(act["title"])}</h2><p>{e(act["desc"])} Print it at home, no sign-up needed.</p></div><a class="btn dark" href="../activities/{e(act["slug"])}.html">Get the free printable</a></section>' if act else ""
         learn = "".join(f"<li>{e(x)}</li>" for x in b.get("learn", []))
-        body = f"""<main class="wrap"><p class="crumb"><a href="../books.html">Our books</a> › {e(b["title"])}</p>
+        body = f"""<main><div class="skyband"><div class="wrap"><p class="crumb"><a href="../books.html">Our books</a> › {e(b["title"])}</p>
 <section class="bk"><img class="cov" src="../{e(b.get("cover"))}" alt="Cover of {e(b["title"])}">
 <div><h1>{e(b["title"])}</h1>{f'<p class="subt">{e(b.get("subtitle"))}</p>' if b.get("subtitle") else ""}
 <div class="facts"><span>Ages {e(b.get("ages", "3–8"))}</span><span>{e(b.get("format", "Paperback"))}</span><span>by Bright Mind Kids</span></div>
 <p>{e(b.get("about") or b.get("blurb"))}</p>
 {f'<h2 style="font-size:24px;margin-top:20px">What your child will learn</h2><ul class="learn">{learn}</ul>' if learn else ""}
 {f'<p style="color:var(--soft)">{e(b.get("extras"))}</p>' if b.get("extras") else ""}
-<div class="acts"><a class="btn" href="{e(b["amazon"])}" rel="noopener">Buy on Amazon</a>{f'<a class="btn dark" href="../activities/{e(act["slug"])}.html">Free activity</a>' if act else ""}</div></div></section>
-{prev}{actblock}{signup_block("book:" + b["slug"])}</main>"""
+<div class="acts"><a class="btn" href="{e(b["amazon"])}" rel="noopener">Buy on Amazon</a>{f'<a class="btn dark" href="../activities/{e(act["slug"])}.html">Free activity</a>' if act else ""}</div></div></section></div></div>
+<div class="wrap">{prev}{actblock}{signup_block("book:" + b["slug"])}</div></main>"""
         ld = {"@context": "https://schema.org", "@type": "Book", "name": b["title"], "author": {"@type": "Organization", "name": "Bright Mind Kids"},
               "image": f"{SITE}/{b.get('cover')}", "description": b.get("about") or b.get("blurb"), "typicalAgeRange": str(b.get("ages", "")).replace("–", "-"),
               "url": f"{SITE}/{b['url']}", "sameAs": b["amazon"]}
@@ -244,9 +250,9 @@ def build_books():
                    canonical=b["url"], image=b.get("cover", ""), jsonld=ld, extra_css=BOOK_CSS, ogtype="book")
         with open(b["url"], "w", encoding="utf-8") as f: f.write(out)
     cards = "".join(f'<a class="bcard" href="{e(b["url"])}"><img src="{e(b.get("cover"))}" alt="Cover of {e(b["title"])}" loading="lazy"><h2>{e(b["title"])}</h2><p>{e(b.get("blurb"))}</p><span class="btn" style="align-self:flex-start">See the book</span></a>' for b in books)
-    body = f"""<main class="wrap"><h1 style="font-size:clamp(34px,5vw,50px);padding-top:30px">Our picture books</h1>
-<p style="max-width:40em;color:var(--soft)">Gentle stories and activity books for children aged 3 to 8, each with a free printable activity to enjoy together.</p>
-<div class="shelf">{cards}</div>{signup_block("books")}</main>"""
+    body = f"""<main><div class="skyband"><div class="wrap"><h1 style="font-size:clamp(34px,5vw,54px);padding-top:30px">Our picture books</h1>
+<p style="max-width:40em">Gentle stories and activity books for children aged 3 to 8, each with a free printable activity to enjoy together.</p></div></div>
+<div class="wrap"><div class="shelf">{cards}</div>{signup_block("books")}</div></main>"""
     with open("books.html", "w", encoding="utf-8") as f:
         f.write(page("Our picture books · Bright Mind Kids", "Picture books for kids aged 3 to 8 by Bright Mind Kids, each with a free printable activity.", body, cur="books.html", canonical="books.html", extra_css=BOOK_CSS))
 

@@ -86,17 +86,16 @@ nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.12);outline:none}
 .cat{color:var(--teal);font-weight:800}
 .ex{color:var(--soft);margin:0;font-size:16px}
 .empty{padding:40px 0;color:var(--soft);font-weight:700}
-.shelf{background:var(--teal);color:#fff;padding-block:clamp(32px,5vw,64px)}
-:root[data-theme=dark] .shelf,.shelf{--tealbg:#236A78}
-.shelf{background:#236A78}
-.shelf h2{font-size:clamp(30px,4vw,44px);color:#fff}
-.shelf>.wrap>p{color:#DCEFF2;max-width:40em}
+.shelf{position:relative;background:linear-gradient(#CDEBEF,#A9DAE2);color:#1F2A4A;padding-block:clamp(56px,6vw,84px)}
+.shelf::before,.shelf::after{content:"";position:absolute;left:0;right:0;height:28px;background:radial-gradient(circle at 30px 30px,#FDEDE3 29px,transparent 30px) 0 0/60px 28px repeat-x}
+.shelf::before{top:-1px;transform:scaleY(-1);background:radial-gradient(circle at 30px 30px,#FFC94A 29px,transparent 30px) 0 0/60px 28px repeat-x}.shelf::after{bottom:-1px}
+.shelf h2{font-size:clamp(30px,4vw,44px);color:#7A4A1E}
+.shelf>.wrap>p{color:#1F2A4A;max-width:40em}
 .books{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px;margin-top:24px}
-.book{display:grid;grid-template-columns:140px minmax(0,1fr);gap:18px;background:rgba(255,255,255,.1);border-radius:20px;padding:16px;align-items:center}
-.book img{width:140px;height:140px;object-fit:cover;border-radius:12px;box-shadow:0 8px 18px rgba(0,0,0,.25);background:#FFF8EC}
-.nocover{width:140px;height:140px;border-radius:12px;background:#FFC94A;color:#1F2A4A;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font:600 16px Fredoka,sans-serif}
-.book h3{font-size:21px;color:#fff}
-.book p{margin:6px 0 12px;color:#DCEFF2;font-size:15px}
+.book{display:grid;grid-template-columns:140px minmax(0,1fr);gap:18px;background:#fff;border-radius:24px;padding:16px;align-items:center;box-shadow:0 14px 30px -20px rgba(31,42,74,.5)}
+.book img{width:140px;height:140px;object-fit:cover;border-radius:14px;box-shadow:0 8px 18px rgba(0,0,0,.2);background:#FFF8EC}
+.book h3{font-size:21px;color:#1F2A4A}
+.book p{margin:6px 0 12px;color:#5A6482;font-size:15px}
 .btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border-radius:999px;background:var(--sun);color:#1F2A4A;font-weight:800;text-decoration:none;font-size:15px}
 footer{background:var(--navy);color:#C9D0E2;padding-block:28px;font-size:15px}
 footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
@@ -260,7 +259,7 @@ const safeUrl=u=>/^https?:\/\//.test(u||'')?u:'#';
 const fmt=d=>{const t=new Date(d+'T12:00:00');return isNaN(t)?esc(d):t.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})};
 let posts=[],books=[],cat='All';
 const amz=a=>'https://www.amazon.com/dp/'+encodeURIComponent(a||'');
-function renderBooks(){const el=document.getElementById('booksList');el.innerHTML=books.map(b=>`<div class="book">${b.cover?`<img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy">`:`<div class="nocover">${esc(b.title)}</div>`}<div><h3>${esc(b.title)}</h3>${b.subtitle?`<p style="margin:2px 0 0;font-weight:700">${esc(b.subtitle)}</p>`:''}<p>${esc(b.blurb)}${b.ages?` Ages ${esc(b.ages)}.`:''}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${b.page&&/^books\/[\w-]+\.html$/.test(b.page)?`<a class="btn" href="${esc(b.page)}">See the book</a>`:''}<a class="btn" style="background:#fff" href="${esc(amz(b.asin))}">Amazon</a></div></div></div>`).join('');document.getElementById('bookCount').textContent=books.length>2?books.length+' books so far.':''}
+function renderBooks(){const el=document.getElementById('booksList');el.innerHTML=books.map(b=>`<div class="book">${b.cover?`<img src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}" loading="lazy">`:`<div class="nocover">${esc(b.title)}</div>`}<div><h3>${esc(b.title)}</h3>${b.subtitle?`<p style="margin:2px 0 0;font-weight:700">${esc(b.subtitle)}</p>`:''}<p>${esc(b.blurb)}${b.ages?` Ages ${esc(b.ages)}.`:''}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${b.page&&/^books\/[\w-]+\.html$/.test(b.page)?`<a class="btn" href="${esc(b.page)}">See the book</a>`:''}<a class="btn" style="background:#F3EAD6" href="${esc(amz(b.asin))}">Amazon</a></div></div></div>`).join('');document.getElementById('bookCount').textContent=books.length>2?books.length+' books so far.':''}
 const stars=document.getElementById('stars')||document.createElementNS('http://www.w3.org/2000/svg','g');
 for(let i=0;i<34;i++){const x=(i*137)%640,y=(i*71)%250;const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x);c.setAttribute('cy',y+8);c.setAttribute('r',i%5?1.6:2.6);c.setAttribute('opacity',i%3?.55:.9);if(i%4==0){c.setAttribute('class','twinkle');c.style.animationDelay=(i%7)*.4+'s'}stars.appendChild(c)}
 

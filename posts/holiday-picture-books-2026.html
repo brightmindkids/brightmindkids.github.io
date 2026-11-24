@@ -41,7 +41,13 @@ footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
 .signup .ok{display:none;background:var(--sun);color:var(--navy);border-radius:16px;padding:14px;font-weight:800}
 .signup.sent form{display:none}.signup.sent .ok{display:block}
 @media(max-width:720px){.signup{grid-template-columns:minmax(0,1fr)}}
-@media print{header,footer,.noprint,.signup{display:none!important}body{background:#fff}}
+@media print{header,footer,.noprint,.signup,.skyband::before,.skyband::after{display:none!important}body{background:#fff}}
+.skyband{position:relative;background:linear-gradient(#CDEBEF,#A9DAE2);padding:10px 0 56px;margin-bottom:10px}
+.skyband::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:radial-gradient(circle at 30px 30px,#FDEDE3 29px,transparent 30px) 0 0/60px 28px repeat-x}
+.skyband::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='160'%3E%3Cg fill='none' stroke='white' stroke-width='3' stroke-linecap='round' opacity='.9'%3E%3Cpath d='M40 60q6-20 26-15q9-16 27-6q22-3 20 21h-73z'/%3E%3Cpath d='M300 110q5-16 21-12q8-14 23-4q18-3 16 16h-60z'/%3E%3C/g%3E%3C/svg%3E") 0 0 repeat-x;pointer-events:none}
+.skyband>.wrap{position:relative;z-index:1}
+.skyband h1{color:#7A4A1E}
+
 
 .art{max-width:760px;margin:0 auto;padding:0 max(5vw,16px) 20px}
 .art .hero{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 45%;border-radius:24px;margin:16px 0 22px;display:block;background:#EAF4FB}
