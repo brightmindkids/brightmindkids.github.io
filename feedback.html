@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parent Feedback · Bright Mind Kids</title>
+<meta name="description" content="Tell us what you and your child enjoy on Bright Mind Kids, and what you would like to see next.">
+<meta property="og:title" content="Parent feedback · Bright Mind Kids">
+<meta property="og:description" content="Share your ideas and help us make better stories, books and activities for little ones.">
+<meta property="og:url" content="https://brightmindkids.github.io/feedback.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='17' fill='%23FFC94A'/%3E%3Cpath d='M7 22c4-2 7-2 10 0 3-2 6-2 10 0V11c-4-2-7-2-10 0-3-2-6-2-10 0z' fill='%231F2A4A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1F2A4A;--night:#18213D;--sun:#FFC94A;--cream:#FFF8EC;--teal:#236A78;--soft:#5A6482}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--cream);color:var(--navy);font:17px/1.55 Nunito,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Fredoka,Nunito,sans-serif;line-height:1.08;margin:0;text-wrap:balance}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 max(5vw,16px)}
+header{background:var(--navy);color:var(--cream)}
+.bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;font:600 21px Fredoka,sans-serif;text-decoration:none}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+nav a{text-decoration:none;font-weight:700;font-size:15px;padding:10px 14px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+nav a:hover,nav a:focus-visible,nav a[aria-current]{background:rgba(255,255,255,.14);outline:none}
+.hero{background:linear-gradient(var(--navy),var(--night));color:var(--cream);padding:8px 0 40px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(34px,5vw,52px)}.hero h1 span{color:var(--sun)}
+.hero p{color:#D9DEEC;max-width:36em;margin:12px 0 0}
+.moon{position:absolute;right:max(5vw,16px);top:10px;width:clamp(70px,12vw,120px);opacity:.95}
+
+
+.panel{position:relative;z-index:1;background:#fff;border-radius:28px;padding:clamp(18px,3.4vw,36px);margin:-22px 0 30px;box-shadow:0 12px 30px -20px rgba(31,42,74,.6)}
+fieldset{border:0;margin:0 0 24px;padding:0}legend,label.q{display:block;font:600 21px Fredoka,Nunito,sans-serif;margin-bottom:10px}
+.faces{display:flex;gap:10px;flex-wrap:wrap}.faces label{cursor:pointer}.faces input{position:absolute;opacity:0}
+.faces span{display:grid;place-items:center;width:68px;height:68px;border-radius:20px;background:#FFF8EC;border:3px solid #F3EAD6;font-size:34px}
+.faces small{display:block;text-align:center;font-size:12px;font-weight:800;color:var(--soft);margin-top:4px}
+.faces input:checked+span{border-color:var(--sun);background:#FFF3C9;transform:scale(1.06)}.faces input:focus-visible+span{outline:3px solid var(--teal);outline-offset:2px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips label{cursor:pointer}.chips input{position:absolute;opacity:0}
+.chips span{display:inline-block;padding:10px 16px;border-radius:999px;background:#F3EAD6;font-weight:800;font-size:15px}
+.chips input:checked+span{background:var(--navy);color:#fff}.chips input:focus-visible+span{outline:3px solid var(--teal);outline-offset:2px}
+textarea,input[type=text],input[type=email]{width:100%;font:16px Nunito,sans-serif;padding:14px 16px;border-radius:18px;border:2px solid #E3D8C2;background:#FFFDF8;color:var(--navy)}
+textarea{min-height:140px;resize:vertical}textarea:focus,input:focus{outline:3px solid var(--teal);outline-offset:1px;border-color:transparent}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.hint{font-size:14px;color:var(--soft);margin:6px 0 0}
+button{font:800 17px Nunito,sans-serif;border:0;border-radius:999px;padding:14px 28px;min-height:52px;cursor:pointer;background:var(--sun);color:var(--navy)}
+button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}button[disabled]{opacity:.6;cursor:wait}
+.thanks{display:none;text-align:center;padding:30px 10px}.thanks.show{display:block}.thanks h2{font-size:36px;margin:10px 0}
+.err{display:none;background:#FDECEA;color:#8A2B1E;border-radius:16px;padding:12px 16px;font-weight:700;margin-bottom:14px}
+footer{padding:30px 0;color:var(--soft);font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="./">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#FFC94A"/><path d="M7 22c4-2 7-2 10 0 3-2 6-2 10 0V11c-4-2-7-2-10 0-3-2-6-2-10 0z" fill="#1F2A4A"/><path d="M17 11v11" stroke="#FFC94A" stroke-width="1.6"/></svg>
+      Bright Mind Kids
+    </a>
+    <nav aria-label="Main">
+      <a href="./">Stories</a>
+      <a href="books.html">Books</a>
+      <a href="games.html">Kids' games</a>
+      <a href="manners.html">Manners cards</a>
+      <a href="bedtime.html">Bedtime chart</a>
+      <a href="prayer.html">Prayer times</a>
+      <a href="quran.html">Learn Quran</a>
+      <a href="./#books">Our books</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="moon" viewBox="0 0 100 100" aria-hidden="true"><path d="M62 10a42 42 0 1 0 28 64A36 36 0 0 1 62 10z" fill="#FFC94A"/><circle cx="20" cy="20" r="3" fill="#FFF8EC"/><circle cx="88" cy="22" r="2.5" fill="#FFF8EC"/></svg>
+  <div class="wrap">
+    <h1>Tell us what <span>you think</span></h1>
+    <p>We make stories, books and activities for little ones, and your ideas help us make them better. It only takes a minute!</p>
+  </div>
+</section>
+<main class="wrap">
+  <div class="panel">
+    <form id="fb" novalidate>
+      <p class="err" id="err" role="alert"></p>
+      <fieldset><legend>How much do you and your child enjoy Bright Mind Kids?</legend>
+        <div class="faces">
+          <label><input type="radio" name="rating" value="1 - Not really"><span aria-hidden="true">😕</span><small>Not really</small></label>
+          <label><input type="radio" name="rating" value="2 - It's okay"><span aria-hidden="true">😐</span><small>It's okay</small></label>
+          <label><input type="radio" name="rating" value="3 - Good"><span aria-hidden="true">🙂</span><small>Good</small></label>
+          <label><input type="radio" name="rating" value="4 - Very good"><span aria-hidden="true">😊</span><small>Very good</small></label>
+          <label><input type="radio" name="rating" value="5 - We love it"><span aria-hidden="true">😍</span><small>We love it!</small></label>
+        </div>
+      </fieldset>
+      <fieldset><legend>What do you use most?</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="uses" value="Stories and articles"><span>Stories &amp; articles</span></label>
+          <label><input type="checkbox" name="uses" value="Our books"><span>Our books</span></label>
+          <label><input type="checkbox" name="uses" value="Kids' games"><span>Kids' games</span></label>
+          <label><input type="checkbox" name="uses" value="Manners cards"><span>Manners cards</span></label>
+          <label><input type="checkbox" name="uses" value="Bedtime chart"><span>Bedtime chart</span></label>
+          <label><input type="checkbox" name="uses" value="Prayer times"><span>Prayer times</span></label>
+          <label><input type="checkbox" name="uses" value="Learn Quran"><span>Learn Quran</span></label>
+        </div>
+      </fieldset>
+      <fieldset><label class="q" for="msg">Your feedback or ideas</label>
+        <textarea id="msg" name="message" maxlength="2000" placeholder="What does your child enjoy? What would you like us to make next? Did anything not work?"></textarea>
+        <p class="hint">Please don't write your child's full name, school or any other personal details.</p>
+      </fieldset>
+      <div class="row">
+        <div><label class="q" for="nm">Your first name <small style="font:700 14px Nunito;color:var(--soft)">(optional)</small></label><input type="text" id="nm" name="name" maxlength="60" autocomplete="given-name"></div>
+        <div><label class="q" for="em">Your email <small style="font:700 14px Nunito;color:var(--soft)">(optional)</small></label><input type="email" id="em" name="email" maxlength="120" autocomplete="email"><p class="hint">Only if you would like a reply. We never share it.</p></div>
+      </div>
+      <p style="margin-top:24px"><button type="submit" id="send">Send my feedback 💌</button></p>
+      <p class="hint">Feedback is for parents and carers only. If you are a child, please ask a grown-up to fill this in with you.</p>
+    </form>
+    <div class="thanks" id="thanks" role="status"><div style="font-size:60px">💛</div><h2>Thank you!</h2><p>Your feedback means a lot to us. Every message is read by the Bright Mind Kids team.</p><p style="margin-top:18px"><a href="./" style="font-weight:800">Back to the stories</a></p></div>
+  </div>
+</main>
+<footer><div class="wrap">© 2026 Bright Mind Kids · <a href="./">The Story Corner</a> · <a href="games.html">Kids’ games</a> · <a href="quran.html">Learn Quran</a></div></footer>
+<script>
+/* Responses go to the Bright Mind Kids Google Form. */
+var FORM={action:"",rating:"",uses:"",message:"",name:"",email:""};
+(function(){
+var f=document.getElementById('fb'),err=document.getElementById('err');
+f.addEventListener('submit',function(e){
+  e.preventDefault();err.style.display='none';
+  var msg=f.message.value.trim(),rating=(f.querySelector('input[name=rating]:checked')||{}).value||'';
+  if(!rating&&!msg){err.textContent='Please choose a face or write a few words.';err.style.display='block';return}
+  var em=f.email.value.trim();if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){err.textContent='That email address does not look right.';err.style.display='block';return}
+  if(!FORM.action){err.textContent='Sorry, feedback is not open yet. Please try again soon!';err.style.display='block';return}
+  var d=new URLSearchParams();
+  if(FORM.rating)d.append(FORM.rating,rating);
+  if(FORM.uses)Array.prototype.forEach.call(f.querySelectorAll('input[name=uses]:checked'),function(c){d.append(FORM.uses,c.value)});
+  if(FORM.message)d.append(FORM.message,msg);if(FORM.name)d.append(FORM.name,f.name.value.trim());if(FORM.email)d.append(FORM.email,em);
+  var b=document.getElementById('send');b.disabled=true;b.textContent='Sending…';
+  fetch(FORM.action,{method:'POST',mode:'no-cors',body:d}).then(function(){f.style.display='none';document.getElementById('thanks').classList.add('show')}).catch(function(){b.disabled=false;b.textContent='Send my feedback 💌';err.textContent='Sorry, something went wrong. Please check your connection and try again.';err.style.display='block'});
+});
+})();
+</script>
+</body>
+</html>
