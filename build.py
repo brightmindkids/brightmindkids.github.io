@@ -81,7 +81,7 @@ footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
 
 def nav(cur=""):
     items = [("index.html", "Stories"), ("books.html", "Books"), ("games.html", "Kids' games"),
-             ("manners.html", "Manners cards"), ("bedtime.html", "Bedtime chart"), ("prayer.html", "Prayer times")]
+             ("manners.html", "Manners cards"), ("bedtime.html", "Bedtime chart"), ("prayer.html", "Prayer times"), ("quran.html", "Learn Quran")]
     return "".join(f'<a href="{{R}}{h}"{" aria-current=\"page\"" if h == cur else ""}>{t}</a>' for h, t in items)
 
 def page(title, desc, body, *, depth=0, cur="", canonical="", image="", jsonld=None, extra_css="", ogtype="website"):
@@ -111,7 +111,7 @@ def page(title, desc, body, *, depth=0, cur="", canonical="", image="", jsonld=N
 <body>
 <header><div class="wrap bar"><a class="logo" href="{R}index.html">{LOGO} Bright Mind Kids</a><nav aria-label="Main">{nav(cur).replace("{R}", R)}</nav></div></header>
 """
-    foot = f"""<footer><div class="wrap"><span>© {datetime.date.today().year} Bright Mind Kids · The Story Corner</span><span><a href="{R}books.html">Our books</a> · <a href="{R}games.html">Kids' games</a> · <a href="{R}manners.html">Manners cards</a> · <a href="{R}bedtime.html">Bedtime chart</a> · <a href="{R}prayer.html">Prayer times</a></span></div></footer>
+    foot = f"""<footer><div class="wrap"><span>© {datetime.date.today().year} Bright Mind Kids · The Story Corner</span><span><a href="{R}books.html">Our books</a> · <a href="{R}games.html">Kids' games</a> · <a href="{R}manners.html">Manners cards</a> · <a href="{R}bedtime.html">Bedtime chart</a> · <a href="{R}prayer.html">Prayer times</a> · <a href="{R}quran.html">Learn Quran</a></span></div></footer>
 {signup_js()}
 </body></html>"""
     return head + body.replace("{R}", R) + foot
@@ -367,7 +367,7 @@ def build_acts():
         with open(f'activities/{a["slug"]}.html', "w", encoding="utf-8") as f: f.write(out)
 
 def build_sitemap():
-    urls = [("", "daily", "1.0"), ("books.html", "weekly", "0.9"), ("games.html", "monthly", "0.8"), ("manners.html", "monthly", "0.8"), ("bedtime.html", "monthly", "0.8"), ("prayer.html", "monthly", "0.8")]
+    urls = [("", "daily", "1.0"), ("books.html", "weekly", "0.9"), ("games.html", "monthly", "0.8"), ("manners.html", "monthly", "0.8"), ("bedtime.html", "monthly", "0.8"), ("prayer.html", "monthly", "0.8"), ("quran.html", "monthly", "0.8")]
     urls += [(b["url"], "monthly", "0.9") for b in books]
     urls += [(f'activities/{b["activity"]["slug"]}.html', "monthly", "0.8") for b in books if b.get("activity") and b["activity"]["slug"] in ACT_SVG]
     urls += [(f'posts/{p["slug"]}.html', "monthly", "0.7") for p in posts]
