@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prayer Times Near You · Bright Mind Kids</title>
+<meta name="description" content="Daily Muslim prayer times for your location: Fajr, Dhuhr, Asr, Maghrib and Isha, with a countdown to the next prayer, the Hijri date and the Qibla direction. Calculated privately in your browser.">
+<meta property="og:title" content="Prayer times for your location · Bright Mind Kids">
+<meta property="og:description" content="Fajr to Isha for today, a countdown to the next prayer and the Qibla direction. Free and private.">
+<meta property="og:url" content="https://brightmindkids.github.io/prayer.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='17' fill='%23FFC94A'/%3E%3Cpath d='M7 22c4-2 7-2 10 0 3-2 6-2 10 0V11c-4-2-7-2-10 0-3-2-6-2-10 0z' fill='%231F2A4A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1F2A4A;--night:#18213D;--sun:#FFC94A;--cream:#FFF8EC;--teal:#236A78;--soft:#5A6482}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--cream);color:var(--navy);font:17px/1.55 Nunito,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Fredoka,Nunito,sans-serif;line-height:1.08;margin:0;text-wrap:balance}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 max(5vw,16px)}
+header{background:var(--navy);color:var(--cream)}
+.bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;font:600 21px Fredoka,sans-serif;text-decoration:none}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+nav a{text-decoration:none;font-weight:700;font-size:15px;padding:10px 14px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+nav a:hover,nav a:focus-visible,nav a[aria-current]{background:rgba(255,255,255,.14);outline:none}
+.hero{background:linear-gradient(var(--navy),var(--night));color:var(--cream);padding:8px 0 40px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(34px,5vw,52px)}.hero h1 span{color:var(--sun)}
+.hero p{color:#D9DEEC;max-width:36em;margin:12px 0 0}
+.moon{position:absolute;right:max(5vw,16px);top:10px;width:clamp(70px,12vw,120px);opacity:.95}
+
+.panel{background:#fff;border-radius:28px;padding:clamp(16px,3vw,30px);margin-bottom:24px;box-shadow:0 12px 30px -20px rgba(31,42,74,.6)}
+.loc{position:relative;z-index:1;margin:-22px 0 24px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button,select{font:800 16px Nunito,sans-serif;border:0;border-radius:999px;padding:10px 18px;min-height:48px;cursor:pointer;background:#F3EAD6;color:var(--navy)}
+select{padding-right:34px;max-width:100%}
+button.main{background:var(--sun)}
+button:focus-visible,select:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.where{font:600 22px Fredoka,Nunito,sans-serif}.where small{display:block;font:700 15px Nunito;color:var(--soft);margin-top:4px}
+.next{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:linear-gradient(135deg,#1F2A4A,#2B4A7A);color:#FFF8EC;border-radius:28px;padding:clamp(18px,3vw,30px);margin-bottom:24px;position:relative;overflow:hidden}
+.next .lbl{font:800 14px Nunito,sans-serif;letter-spacing:.1em;color:var(--sun);text-transform:uppercase}
+.next .nm{font:700 clamp(30px,6vw,54px) Fredoka,Nunito,sans-serif}.next .cd{font:600 clamp(20px,3.4vw,30px) Fredoka,Nunito,sans-serif;color:#D9DEEC}
+.next svg{width:clamp(70px,12vw,110px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,140px),1fr));gap:12px}
+.pt{background:#FFF8EC;border:3px solid #F3EAD6;border-radius:22px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.pt b{font:600 20px Fredoka,Nunito,sans-serif}.pt span{font:700 28px Fredoka,Nunito,sans-serif;color:var(--teal)}.pt i{font-style:normal;font-size:13px;color:var(--soft);font-weight:700}
+.pt.sr{opacity:.75}.pt.on{background:#FFF3C9;border-color:var(--sun)}.pt.past b,.pt.past span{opacity:.55}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.compass{width:200px;height:200px;margin:8px auto 0;position:relative}
+.set{display:grid;gap:14px}.set label{display:grid;gap:6px;font-weight:800}
+.note{font-size:14px;color:var(--soft)}
+.err{background:#FDECEA;color:#8A2B1E;border-radius:16px;padding:12px 16px;font-weight:700;display:none}
+footer{padding:30px 0;color:var(--soft);font-size:14px}
+@media (max-width:640px){.moon{opacity:.3;top:auto;bottom:10px}.next{grid-template-columns:1fr;text-align:center;justify-items:center}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="./">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#FFC94A"/><path d="M7 22c4-2 7-2 10 0 3-2 6-2 10 0V11c-4-2-7-2-10 0-3-2-6-2-10 0z" fill="#1F2A4A"/><path d="M17 11v11" stroke="#FFC94A" stroke-width="1.6"/></svg>
+      Bright Mind Kids
+    </a>
+    <nav aria-label="Main">
+      <a href="./">Stories</a>
+      <a href="books.html">Books</a>
+      <a href="games.html">Kids' games</a>
+      <a href="manners.html">Manners cards</a>
+      <a href="bedtime.html">Bedtime chart</a>
+      <a href="prayer.html" aria-current="page">Prayer times</a>
+      <a href="./#books">Our books</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="moon" viewBox="0 0 100 100" aria-hidden="true"><path d="M62 10a42 42 0 1 0 28 64A36 36 0 0 1 62 10z" fill="#FFC94A"/><circle cx="20" cy="20" r="3" fill="#FFF8EC"/><circle cx="88" cy="22" r="2.5" fill="#FFF8EC"/></svg>
+  <div class="wrap">
+    <h1>Prayer <span>times</span></h1>
+    <p>Today’s Fajr, Dhuhr, Asr, Maghrib and Isha for where you are, a countdown to the next prayer and the Qibla direction. Everything is calculated on your own device: your location is never sent or saved anywhere.</p>
+  </div>
+</section>
+<main class="wrap">
+  <div class="loc">
+    <button class="main" id="gps" type="button">📍 Use my location</button>
+    <select id="city" aria-label="Or choose a city"></select>
+  </div>
+  <p class="err" id="err" role="alert"></p>
+  <div class="panel" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center">
+    <div class="where" id="where">Choose your location<small id="dates"></small></div>
+  </div>
+  <div class="next" aria-live="polite">
+    <svg viewBox="0 0 100 140" aria-hidden="true"><path d="M50 4v14" stroke="#FFC94A" stroke-width="5"/><path d="M30 22h40l6 10H24z" fill="#C98A2B"/><ellipse cx="50" cy="78" rx="38" ry="44" fill="#2F8F9D" stroke="#C98A2B" stroke-width="5"/><ellipse cx="50" cy="78" rx="26" ry="32" fill="#FFE7A3"/><path d="M50 58l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="#FFC94A"/><path d="M30 122h40l-6 12H36z" fill="#C98A2B"/></svg>
+    <div><div class="lbl">Next prayer</div><div class="nm" id="nextName">–</div><div class="cd" id="nextIn"></div></div>
+  </div>
+  <div class="panel"><h2 style="font-size:28px;margin-bottom:14px">Today</h2><div class="grid" id="grid"></div></div>
+  <div class="two">
+    <div class="panel"><h2 style="font-size:26px">Qibla direction</h2><p class="note" id="qtext">Choose a location to see the direction of the Kaaba.</p>
+      <svg class="compass" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="#FFF8EC" stroke="#F3EAD6" stroke-width="6"/><g font-family="Fredoka" font-weight="700" font-size="18" fill="#5A6482" text-anchor="middle"><text x="100" y="30">N</text><text x="176" y="106">E</text><text x="100" y="184">S</text><text x="24" y="106">W</text></g><g id="needle" transform="rotate(0 100 100)"><path d="M100 30l12 70h-24z" fill="#E8604C"/><path d="M100 170l12-70h-24z" fill="#9FB0C8"/><rect x="88" y="36" width="24" height="18" rx="3" fill="#1F2A4A"/><rect x="88" y="41" width="24" height="3" fill="#FFC94A"/></g><circle cx="100" cy="100" r="7" fill="#1F2A4A"/></svg>
+      <p class="note">The red arrow points to the Kaaba when the top of the circle faces North. Use a compass app to find North.</p></div>
+    <div class="panel set"><h2 style="font-size:26px">Settings</h2>
+      <label>Calculation method<select id="method"></select></label>
+      <label>Asr time<select id="asr"><option value="1">Standard (Shafi’i, Maliki, Hanbali)</option><option value="2">Hanafi</option></select></label>
+      <p class="note">Times are calculated from the sun’s position and may differ by a few minutes from your local mosque. Always follow your mosque or local authority, especially for the start of Ramadan and Eid.</p></div>
+  </div>
+</main>
+<footer><div class="wrap">© 2026 Bright Mind Kids · <a href="./">The Story Corner</a> · <a href="games.html">Kids’ games</a> · <a href="bedtime.html">Bedtime chart</a></div></footer>
+<script src="prayer.js"></script>
+<script>
+(function(){
+var P=window.PrayTimesBMK;
+var CITIES=[["Casablanca, Morocco",33.5731,-7.5898,"Africa/Casablanca","MOROCCO"],["Rabat, Morocco",34.0209,-6.8416,"Africa/Casablanca","MOROCCO"],["Marrakech, Morocco",31.6295,-7.9811,"Africa/Casablanca","MOROCCO"],["Fes, Morocco",34.0181,-5.0078,"Africa/Casablanca","MOROCCO"],["Tangier, Morocco",35.7595,-5.834,"Africa/Casablanca","MOROCCO"],["Agadir, Morocco",30.4278,-9.5981,"Africa/Casablanca","MOROCCO"],["Khenifra, Morocco",32.9394,-5.6675,"Africa/Casablanca","MOROCCO"],["Oujda, Morocco",34.6814,-1.9086,"Africa/Casablanca","MOROCCO"],
+["Makkah, Saudi Arabia",21.4225,39.8262,"Asia/Riyadh","MAKKAH"],["Madinah, Saudi Arabia",24.4686,39.6142,"Asia/Riyadh","MAKKAH"],["Riyadh, Saudi Arabia",24.7136,46.6753,"Asia/Riyadh","MAKKAH"],["Dubai, UAE",25.2048,55.2708,"Asia/Dubai","GULF"],["Doha, Qatar",25.2854,51.531,"Asia/Qatar","GULF"],["Cairo, Egypt",30.0444,31.2357,"Africa/Cairo","EGYPT"],["Algiers, Algeria",36.7538,3.0588,"Africa/Algiers","MWL"],["Tunis, Tunisia",36.8065,10.1815,"Africa/Tunis","MWL"],["Amman, Jordan",31.9539,35.9106,"Asia/Amman","MWL"],["Istanbul, Turkey",41.0082,28.9784,"Europe/Istanbul","TURKEY"],
+["London, UK",51.5074,-0.1278,"Europe/London","MWL"],["Paris, France",48.8566,2.3522,"Europe/Paris","FRANCE"],["Brussels, Belgium",50.8503,4.3517,"Europe/Brussels","MWL"],["Amsterdam, Netherlands",52.3676,4.9041,"Europe/Amsterdam","MWL"],["Berlin, Germany",52.52,13.405,"Europe/Berlin","MWL"],["Madrid, Spain",40.4168,-3.7038,"Europe/Madrid","MWL"],["Milan, Italy",45.4642,9.19,"Europe/Rome","MWL"],
+["New York, USA",40.7128,-74.006,"America/New_York","ISNA"],["Chicago, USA",41.8781,-87.6298,"America/Chicago","ISNA"],["Houston, USA",29.7604,-95.3698,"America/Chicago","ISNA"],["Los Angeles, USA",34.0522,-118.2437,"America/Los_Angeles","ISNA"],["Toronto, Canada",43.6532,-79.3832,"America/Toronto","ISNA"],["Montreal, Canada",45.5019,-73.5674,"America/Toronto","ISNA"],
+["Karachi, Pakistan",24.8607,67.0011,"Asia/Karachi","KARACHI"],["Dhaka, Bangladesh",23.8103,90.4125,"Asia/Dhaka","KARACHI"],["Kuala Lumpur, Malaysia",3.139,101.6869,"Asia/Kuala_Lumpur","MWL"],["Jakarta, Indonesia",-6.2088,106.8456,"Asia/Jakarta","MWL"],["Lagos, Nigeria",6.5244,3.3792,"Africa/Lagos","MWL"],["Dakar, Senegal",14.7167,-17.4677,"Africa/Dakar","MWL"],["Sydney, Australia",-33.8688,151.2093,"Australia/Sydney","MWL"]];
+var NAMES={fajr:"Fajr",sunrise:"Sunrise",dhuhr:"Dhuhr",asr:"Asr",maghrib:"Maghrib",isha:"Isha"};
+var AR={fajr:"الفجر",sunrise:"الشروق",dhuhr:"الظهر",asr:"العصر",maghrib:"المغرب",isha:"العشاء"};
+var $=function(id){return document.getElementById(id)};
+var store={get:function(k){try{return JSON.parse(localStorage.getItem('bmk_pt_'+k))}catch(e){return null}},set:function(k,v){try{localStorage.setItem('bmk_pt_'+k,JSON.stringify(v))}catch(e){}}};
+var state=store.get('state')||null;
+var city=$('city');city.innerHTML='<option value="">…or choose a city</option>'+CITIES.map(function(c,i){return '<option value="'+i+'">'+c[0]+'</option>'}).join('');
+var msel=$('method');msel.innerHTML=Object.keys(P.METHODS).map(function(k){return '<option value="'+k+'">'+P.METHODS[k].name+'</option>'}).join('');
+function localTz(){try{return Intl.DateTimeFormat().resolvedOptions().timeZone}catch(e){return null}}
+function partsIn(tz,d){var o={};try{new Intl.DateTimeFormat('en-US',{timeZone:tz||undefined,year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric',hourCycle:'h23'}).formatToParts(d).forEach(function(p){o[p.type]=+p.value})}catch(e){o={year:d.getFullYear(),month:d.getMonth()+1,day:d.getDate(),hour:d.getHours(),minute:d.getMinutes(),second:d.getSeconds()}}return o}
+function offsetHours(tz,d){var p=partsIn(tz,d);var asUTC=Date.UTC(p.year,p.month-1,p.day,p.hour,p.minute,p.second);return Math.round((asUTC-d.getTime())/60000)/60}
+function fmt(h){var m=Math.round(h*60)%1440;var H=Math.floor(m/60),M=m%60;return (H<10?'0':'')+H+':'+(M<10?'0':'')+M}
+function guessMethod(lat,lng){if(lat>27&&lat<36.5&&lng>-13&&lng<-1)return'MOROCCO';if(lat>16&&lat<32&&lng>34&&lng<56)return'MAKKAH';if(lat>22&&lat<32&&lng>25&&lng<35)return'EGYPT';if(lat>14&&lng<-50)return'ISNA';if(lat>23&&lat<37&&lng>60&&lng<93)return'KARACHI';if(lat>36&&lat<42&&lng>26&&lng<45)return'TURKEY';if(lat>41&&lat<51.5&&lng>-5&&lng<8.5)return'FRANCE';return'MWL'}
+function render(){
+  if(!state){return}
+  var now=new Date(),tz=state.tz||localTz();
+  var p=partsIn(tz,now),off=offsetHours(tz,now);
+  var t=P.compute({lat:state.lat,lng:state.lng,tz:off,method:state.method,asr:state.asr,date:{y:p.year,m:p.month,d:p.day}});
+  var nowH=p.hour+p.minute/60+p.second/3600;
+  var order=['fajr','sunrise','dhuhr','asr','maghrib','isha'],next=null;
+  for(var i=0;i<order.length;i++){if(order[i]!=='sunrise'&&t[order[i]]>nowH){next=order[i];break}}
+  var nextAt;
+  if(!next){next='fajr';var tm=new Date(now.getTime()+864e5),p2=partsIn(tz,tm);nextAt=P.compute({lat:state.lat,lng:state.lng,tz:offsetHours(tz,tm),method:state.method,asr:state.asr,date:{y:p2.year,m:p2.month,d:p2.day}}).fajr+24}else nextAt=t[next];
+  $('grid').innerHTML=order.map(function(k){var cls='pt'+(k==='sunrise'?' sr':'')+(k===next&&nextAt<24?' on':'')+(t[k]<=nowH?' past':'');return '<div class="'+cls+'"><b>'+NAMES[k]+'</b><span>'+fmt(t[k])+'</span><i lang="ar">'+AR[k]+'</i></div>'}).join('');
+  var mins=Math.max(0,Math.round((nextAt-nowH)*60));
+  $('nextName').textContent=NAMES[next]+' at '+fmt(nextAt);
+  $('nextIn').textContent='in '+(mins>=60?Math.floor(mins/60)+' h ':'')+(mins%60)+' min';
+  var hijri='';try{hijri=new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric',timeZone:tz}).format(now)}catch(e){}
+  var greg=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:tz||undefined}).format(now);
+  $('where').innerHTML=state.label+'<small>'+greg+(hijri?' · '+hijri:'')+'</small>';
+  var q=P.qibla(state.lat,state.lng);$('needle').setAttribute('transform','rotate('+q.toFixed(1)+' 100 100)');
+  $('qtext').textContent='From '+state.label.split(',')[0]+', the Qibla is '+Math.round(q)+'° from North (clockwise).';
+  msel.value=state.method;$('asr').value=String(state.asr);
+}
+function setState(s){state=s;store.set('state',s);$('err').style.display='none';render()}
+$('gps').addEventListener('click',function(){
+  if(!navigator.geolocation){showErr('Your browser cannot share its location. Please choose a city instead.');return}
+  $('gps').textContent='📍 Finding you…';
+  navigator.geolocation.getCurrentPosition(function(pos){
+    var la=+pos.coords.latitude.toFixed(3),lo=+pos.coords.longitude.toFixed(3);
+    $('gps').textContent='📍 Use my location';city.value='';
+    setState({label:'Your location ('+la.toFixed(2)+', '+lo.toFixed(2)+')',lat:la,lng:lo,tz:localTz(),method:guessMethod(la,lo),asr:state?state.asr:1});
+  },function(){$('gps').textContent='📍 Use my location';showErr('We could not get your location. Please allow location access, or choose a city from the list.')},{timeout:15000,maximumAge:6e5});
+});
+city.addEventListener('change',function(){var c=CITIES[city.value];if(!c)return;setState({label:c[0],lat:c[1],lng:c[2],tz:c[3],method:c[4],asr:c[4]==='KARACHI'||c[4]==='TURKEY'?2:1})});
+msel.addEventListener('change',function(){if(state){state.method=msel.value;setState(state)}});
+$('asr').addEventListener('change',function(){if(state){state.asr=+$('asr').value;setState(state)}});
+function showErr(m){$('err').textContent=m;$('err').style.display='block'}
+if(!state){var c=CITIES[0];state={label:c[0],lat:c[1],lng:c[2],tz:c[3],method:c[4],asr:1}}
+render();setInterval(render,30000);
+})();
+</script>
+</body>
+</html>
