@@ -50,8 +50,13 @@
    {
     "title": "Book Riot: The 10 Best Picture Books of 2026, According to the NYT and NYPL",
     "url": "https://bookriot.com/best-picture-books-2026-nyt-and-nypl/"
+   },
+   {
+    "title": "Photo: Unsplash (free to use under the Unsplash License)",
+    "url": "https://unsplash.com/license"
    }
-  ]
+  ],
+  "image": "images/best-illustrated-childrens-books-2026.jpg"
  },
  {
   "slug": "do-audiobooks-count-as-reading",
@@ -112,8 +117,13 @@
    {
     "title": "Ulverscroft: New research shows audio is helping children discover a love of reading",
     "url": "https://ulverscroft.com/news/new-research-shows-audio-is-helping-children-discover-a-love-o"
+   },
+   {
+    "title": "Photo: Unsplash (free to use under the Unsplash License)",
+    "url": "https://unsplash.com/license"
    }
-  ]
+  ],
+  "image": "images/do-audiobooks-count-as-reading.jpg"
  },
  {
   "slug": "reading-together-is-back-in-classrooms",
@@ -160,8 +170,13 @@
    {
     "title": "National Literacy Trust: Reading for pleasure",
     "url": "https://literacytrust.org.uk/reading-for-pleasure/"
+   },
+   {
+    "title": "Photo: Unsplash (free to use under the Unsplash License)",
+    "url": "https://unsplash.com/license"
    }
-  ]
+  ],
+  "image": "images/reading-together-is-back-in-classrooms.jpg"
  },
  {
   "slug": "afraid-of-the-dark-gentle-bedtime-help",
