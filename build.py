@@ -188,7 +188,7 @@ def build_posts():
                 for s in p["sources"] if str(s.get("url", "")).startswith("http")) + "</ul></div>"
         plug = ""
         if bk:
-            plug = f'<div class="plug"><img src="../{e(bk.get("cover"))}" alt="Cover of {e(bk["title"])}"><div><b style="font-family:Fredoka,sans-serif;font-size:20px">{e(bk["title"])}</b><p>{e(bk.get("blurb"))}</p><a class="btn" href="../{e(bk["url"])}">See the book</a></div></div>'
+            plug = f'<div class="plug"><img src="../{e(bk.get("cover"))}" alt="Cover of {e(bk["title"])}"><div><b style="font-family:Fredoka,sans-serif;font-size:20px">{e(bk["title"])}</b><p>{e(bk.get("blurb"))}</p><a class="btn" href="{e(bk["amazon"])}" rel="noopener">Buy on Amazon</a></div></div>'
         others = [q for q in posts if q["slug"] != slug][:3]
         body = f"""<main><div class="art"><p class="crumb"><a href="../index.html">The Story Corner</a> › {e(p.get("category"))}</p>
 <div class="meta" style="margin-top:12px"><span class="cat">{e(p.get("category"))}</span><span>{fmt(p.get("date"))}</span><span>{e(p.get("read"))} min read</span></div>
