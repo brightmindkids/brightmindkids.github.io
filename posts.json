@@ -221,7 +221,8 @@
         "title": "Journal of Experimental Child Psychology: Individual differences in word learning from print and digital shared book reading",
         "url": "https://doi.org/10.1016/j.jecp.2025.106345"
       }
-    ]
+    ],
+    "image": "images/paper-or-tablet-storybooks-new-word-learning-study-photo.jpg"
   },
   {
     "slug": "thankful-read-alouds-gratitude-books-for-kids",
@@ -296,7 +297,8 @@
         "title": "Scholastic Parents: Beautiful Books That Show Kids How to Be Grateful",
         "url": "https://www.scholastic.com/parents/books-and-reading/book-lists-and-recommendations/life-experiences-values/books-about-gratitude.html"
       }
-    ]
+    ],
+    "image": "images/thankful-read-alouds-gratitude-books-for-kids-photo.jpg"
   },
   {
     "slug": "best-illustrated-childrens-books-2026",
@@ -355,7 +357,7 @@
         "url": "https://unsplash.com/license"
       }
     ],
-    "image": "images/best-illustrated-childrens-books-2026.jpg"
+    "image": "images/best-illustrated-childrens-books-2026-photo.jpg"
   },
   {
     "slug": "do-audiobooks-count-as-reading",
@@ -422,7 +424,7 @@
         "url": "https://unsplash.com/license"
       }
     ],
-    "image": "images/do-audiobooks-count-as-reading.jpg"
+    "image": "images/do-audiobooks-count-as-reading-photo.jpg"
   },
   {
     "slug": "reading-together-is-back-in-classrooms",
@@ -475,7 +477,7 @@
         "url": "https://unsplash.com/license"
       }
     ],
-    "image": "images/reading-together-is-back-in-classrooms.jpg"
+    "image": "images/reading-together-is-back-in-classrooms-photo.jpg"
   },
   {
     "slug": "afraid-of-the-dark-gentle-bedtime-help",
@@ -484,7 +486,7 @@
     "category": "Parents",
     "read": 4,
     "color": "#2E6FB0",
-    "image": "images/afraid-of-the-dark-gentle-bedtime-help.jpg",
+    "image": "images/afraid-of-the-dark-gentle-bedtime-help-photo.jpg",
     "excerpt": "Most children go through a phase of night-time fears. Here is why it happens, and calm, simple ways to help your child feel safe at bedtime.",
     "body": [
       {
@@ -536,7 +538,7 @@
     "category": "Parents",
     "read": 4,
     "color": "#E0943A",
-    "image": "images/mazes-coloring-activity-books-more-than-busywork.jpg",
+    "image": "images/mazes-coloring-activity-books-more-than-busywork-photo.jpg",
     "excerpt": "A quiet afternoon with crayons and a maze builds more than you might think: the hand control, focus and planning children later need for writing and reading.",
     "body": [
       {
@@ -640,7 +642,7 @@
         "url": "https://www.620ckrm.com/2026/11/22/regina-public-library-works-to-tackle-declining-literacy-among-children/"
       }
     ],
-    "image": "images/two-skills-that-predict-reading-success-sounds-and-words.jpg"
+    "image": "images/two-skills-that-predict-reading-success-sounds-and-words-photo.jpg"
   },
   {
     "slug": "reading-to-dogs-calm-confident-readers",
@@ -697,7 +699,7 @@
         "url": "https://www.ucdavis.edu/news/reading-rover-does-it-really-help-children-veterinary-school-says-%E2%80%98yes%E2%80%99"
       }
     ],
-    "image": "images/reading-to-dogs-calm-confident-readers.jpg"
+    "image": "images/reading-to-dogs-calm-confident-readers-photo.jpg"
   },
   {
     "slug": "holiday-picture-books-2026",
@@ -746,7 +748,7 @@
         "url": "https://bookriot.com/best-picture-books-2026-nyt-and-nypl/"
       }
     ],
-    "image": "images/holiday-picture-books-2026.jpg"
+    "image": "images/holiday-picture-books-2026-photo.jpg"
   },
   {
     "slug": "learning-to-read-vs-choosing-to-read",
@@ -796,7 +798,7 @@
         "url": "https://www.edweek.org/teaching-learning/fewer-parents-are-reading-aloud-to-their-kids-why-that-matters/2025/06"
       }
     ],
-    "image": "images/learning-to-read-vs-choosing-to-read.jpg"
+    "image": "images/learning-to-read-vs-choosing-to-read-photo.jpg"
   },
   {
     "slug": "reading-for-fun-is-rising-again",
@@ -846,6 +848,6 @@
         "url": "https://www.readingzone.com/news/uplift-in-reading-for-pleasure-in-2026-report-bucking-the-downward-trend/"
       }
     ],
-    "image": "images/reading-for-fun-is-rising-again.jpg"
+    "image": "images/reading-for-fun-is-rising-again-photo.jpg"
   }
 ]
