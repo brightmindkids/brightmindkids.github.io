@@ -1,5 +1,74 @@
 [
  {
+  "slug": "small-business-saturday-bookshop-adventure-kids",
+  "title": "Small Business Saturday: turn a bookshop visit into a reading adventure",
+  "date": "2026-11-28",
+  "category": "Parents",
+  "read": 3,
+  "color": "#E0943A",
+  "excerpt": "Today is Small Business Saturday, a perfect excuse to visit a local bookshop with your child. Here is how to make the trip fun, calm and full of reading joy, plus a few new picture books to look for.",
+  "body": [
+   {
+    "p": "The Saturday after American Thanksgiving is Small Business Saturday, and this year it falls on November 28. The idea began in the United States in 2010, promoted by American Express to encourage people to shop at local, independent businesses during the busy holiday season. A UK version followed in 2013. Many towns now mark the day with special offers, pop-ups and passports that reward shopping at several local stores."
+   },
+   {
+    "p": "For families, there is one kind of small business that is especially worth a visit: the neighborhood bookshop. Wherever you live, a slow, happy browse can teach children that choosing a book is a treat, not a chore."
+   },
+   {
+    "h": "Make the visit child-sized"
+   },
+   {
+    "ul": [
+     "Go early in the day, when shops are calmer and little ones have more energy.",
+     "Set a simple plan before you arrive: for example, one book each, or one book for the family to share.",
+     "Head to the children's corner first and let your child lead. Sit on the floor together and flip through a few books before deciding.",
+     "Ask the bookseller for help. Many love matching a book to a child's current obsession, from dinosaurs to trains.",
+     "Check for story times or author events; bookshops often plan extra activities on busy shopping weekends."
+    ]
+   },
+   {
+    "h": "A few new picture books to look for"
+   },
+   {
+    "p": "Book Riot's roundup of new November children's books includes some fun choices for ages 3 to 8:"
+   },
+   {
+    "ul": [
+     "Help! I'm Being Eaten by a Bear! by Neil Sharpson, illustrated by Dan Santat: a silly guide to everything you should not do around a bear.",
+     "Good Bear, Bad Bear by Hyewon Yum: two sisters, two identical bears, and a gentle message about not comparing yourself to others.",
+     "North, South, East, and Gladys West by Ainissa Ramirez, illustrated by Tamisha Anthony: a picture book biography of the mathematician whose work helped shape GPS."
+    ]
+   },
+   {
+    "h": "Keep the magic going at home"
+   },
+   {
+    "p": "The trip does not end at the till. Let your child carry the new book home, choose where it will live on the shelf, and pick when to read it first. Write the date and the name of the shop inside the cover. Years from now, that small note can bring back a happy memory of a special day."
+   },
+   {
+    "p": "If a bookshop is not nearby, a visit to the local library is a wonderful alternative. The goal is the same: time together, a little choice, and a new story to share."
+   },
+   {
+    "tip": "Tonight, read the new book once just for fun, then ask your child to 'read' it back to you using only the pictures."
+   }
+  ],
+  "sources": [
+   {
+    "title": "Wikipedia: Small Business Saturday",
+    "url": "https://en.wikipedia.org/wiki/Small_Business_Saturday"
+   },
+   {
+    "title": "Downtown Boise: Small Business Saturday returns November 28, 2026",
+    "url": "https://downtownboise.org/events/our-downtown-events/shop-small"
+   },
+   {
+    "title": "Book Riot: 7 of the Best New Children's Books of November 2026",
+    "url": "https://bookriot.com/new-childrens-books-november-2026/"
+   }
+  ],
+  "image": "images/small-business-saturday-bookshop-adventure-kids.jpg"
+ },
+ {
   "slug": "early-reading-help-works-canada-report-parents",
   "title": "Early reading help works: what a new Canadian report means for parents",
   "date": "2026-11-27",
